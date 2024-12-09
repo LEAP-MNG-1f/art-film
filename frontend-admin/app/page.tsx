@@ -1,5 +1,9 @@
-import Image from "next/image";
+import { AdminPage } from "./_components/mainpage/AdminPage";
 
 export default function Home() {
-  return <div>Admin page</div>;
+  return (
+    <div>
+      <AdminPage />
+    </div>
+  );
 }
