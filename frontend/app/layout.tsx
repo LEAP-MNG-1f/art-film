@@ -5,7 +5,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import Loader from "./_components/Loader/Loader";
+import Loader from "./_components/Utils/Loader";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
