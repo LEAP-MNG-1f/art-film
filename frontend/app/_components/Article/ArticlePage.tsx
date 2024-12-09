@@ -1,17 +1,15 @@
 import Footer from "../HomePage/Footer";
-import Body from "./Body";
-import HeaderPage from "./HeaderPage";
+import HeaderPage from "./Header";
 
-const BlogPage = () => {
+const ArticlePage = () => {
   return (
     <div className="flex justify-center">
       <div className="">
         <HeaderPage />
-        <Body />
-        <Footer/>
+        <Footer />
       </div>
     </div>
   );
 };
 
-export default BlogPage;
+export default ArticlePage;
