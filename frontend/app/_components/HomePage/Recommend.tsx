@@ -1,22 +1,16 @@
-import Link from "next/link";
+
 import React from "react";
 
-function ArticleCard() {
+const Recommend = () => {
   return (
-    <div className="flex justify-center px-4 lg:px-0">
+    <div className="flex justify-center px-4 lg:px-0 pb-10">
       <div className="w-full lg:w-[1040px] flex flex-col gap-4">
-
-        <div className="flex justify-between items-center h-[44px] border-t border-t-[#00000080] border-l-white border-b-white border-r-white">
-          <p className="font-bold">НИЙТЛЭЛ</p>
-          <Link href="/blogs" className="font-bold">
-            БҮГДИЙГ ХАРАХ
-          </Link>
+        <div className="flex justify-between items-center h-[44px] ">
+          <p className="font-bold text-[24px]">Таньд санал болгох</p>
         </div>
 
-      
         <div className="w-full">
           <div className="overflow-x-auto">
-           
             <div className="flex gap-6 lg:gap-4">
               {[...Array(3)].map((_, index) => (
                 <div
@@ -54,6 +48,6 @@ function ArticleCard() {
       </div>
     </div>
   );
-}
+};
 
-export default ArticleCard;
+export default Recommend;

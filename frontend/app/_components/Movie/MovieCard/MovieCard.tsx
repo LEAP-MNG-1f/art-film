@@ -6,7 +6,6 @@ const MovieCard = () => {
   return (
     <div className="flex justify-center pb-10 px-4 lg:px-0">
       <div className="w-full lg:w-[1040px] flex flex-col gap-4">
-        {/* Header */}
         <div className="flex justify-between h-[44px] lg:w-[1040px] border border-t-[#00000080] border-t-2 items-center border-l-white border-b-white border-r-white">
           <p className="font-bold">КИНО</p>
           <Link href="/movies" className="font-bold">
@@ -14,10 +13,8 @@ const MovieCard = () => {
           </Link>
         </div>
 
-        {/* Movie Cards Container */}
         <div className="w-full">
           <div className="overflow-x-auto lg:overflow-x-hidden">
-            {/* Flexbox for horizontal scrolling of cards */}
             <div className="flex lg:flex-col gap-6 lg:gap-4">
               {[...Array(3)].map((_, index) => (
                 <div
@@ -37,10 +34,10 @@ const MovieCard = () => {
                       Найруулагч: Казүо Куроки
                     </p>
                     <p className="text-[14px] font-bold">
-                      Kaзүо Куроки найруулагч Японы баримтат кино урлагт дорвитой хувь
-                      нэмэр, өөрчлөлтийг авчирсан нэгэн билээ. "Silence has no wings"
-                      нь найруулагчийн анхны бүрэн хэмжээний кино бөгөөд аль нэг жанрт
-                      харьяалахад тун хэцүү.
+                      Kaзүо Куроки найруулагч Японы баримтат кино урлагт
+                      дорвитой хувь нэмэр, өөрчлөлтийг авчирсан нэгэн билээ.
+                      "Silence has no wings" нь найруулагчийн анхны бүрэн
+                      хэмжээний кино бөгөөд аль нэг жанрт харьяалахад тун хэцүү.
                     </p>
                     <div className="flex gap-1 items-center mt-2">
                       <p>Цааш унших</p>
@@ -58,8 +55,6 @@ const MovieCard = () => {
 };
 
 export default MovieCard;
-
-
 
 // import Link from "next/link";
 // import React from "react";
