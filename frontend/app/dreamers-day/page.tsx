@@ -1,4 +1,4 @@
-import DreamersDayPage from "../_components/DreamersDay/DreamersDayPage";
+import DreamersDayPage from "../_components/dreamersDay/DreamersDayPage";
 
 const DreamersDay = () => {
   return (

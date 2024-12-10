@@ -1,4 +1,4 @@
-import ArticlePage from "../_components/Article/ArticlePage";
+import ArticlePage from "../_components/article/ArticlePage";
 
 const Article = () => {
   return (
