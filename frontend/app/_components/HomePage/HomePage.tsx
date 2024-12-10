@@ -1,8 +1,9 @@
+import MovieCard from "../movie/movieCard/MovieCard";
+import ArticleCard from "../article/articleCard/ArticleCard";
+
+import DreamersDayCard from "../dreamersDay/dreamersDayCard/DreamersDayCard";
 import Footer from "./Footer";
-import MovieCard from "../Movie/MovieCard/MovieCard";
-import ArticleCard from "../Article/ArticleCard/ArticleCard";
 import Carousel from "./Carousel";
-import DreamersDayCard from "../DreamersDay/DreamersDayCard/DreamersDayCard";
 
 const HomePage = () => {
   return (

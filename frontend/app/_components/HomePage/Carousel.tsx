@@ -1,11 +1,12 @@
 import React from "react";
 import Header from "./MainHeader";
 
+
 const Carousel = () => {
   return (
     <div className="lg:h-[900px] h-[300px] w-screen bg-cover bg-custom-gradient bg-no-repeat flex justify-center lg:pt-[37px]">
       <div>
-        <Header />
+      <Header/>
         <div className="lg:pt-[188px] pt-12 pl-6">
           <div>
             <p className="lg:text-[96px] text-white font-bold">ONLY RIVER</p>

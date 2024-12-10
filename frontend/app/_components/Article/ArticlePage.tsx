@@ -1,4 +1,4 @@
-import Footer from "../HomePage/Footer";
+import Footer from "../homePage/Footer";
 import HeaderPage from "./Header";
 
 const ArticlePage = () => {

@@ -1,5 +1,6 @@
-import HeaderPage from "../Article/Header";
-import Footer from "../HomePage/Footer";
+import HeaderPage from "../article/Header";
+import Footer from "../homePage/Footer";
+
 
 const MoviePage = () => {
   return (
