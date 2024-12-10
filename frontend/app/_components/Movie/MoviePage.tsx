@@ -1,13 +1,11 @@
-import HeaderPage from "../Blog/HeaderPage";
+import HeaderPage from "../Article/Header";
 import Footer from "../HomePage/Footer";
-import Body3 from "./Body3";
 
 const MoviePage = () => {
   return (
     <div className="flex justify-center">
       <div>
         <HeaderPage />
-        <Body3 />
         <Footer />
       </div>
     </div>
