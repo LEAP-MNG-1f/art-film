@@ -1,5 +1,14 @@
-import { Header } from "./Header";
+import { DreamerDay } from "../controlpanel/DreamerDay";
+import { MainStatsSection } from "./MainStatsSection";
+import { StatsCard } from "./StatsCard";
 
 export const MainContainer = () => {
-  return <div className="w-full">Main Container</div>;
+  return (
+    <div className="flex flex-col w-full h-screen bg-orange-50  px-5 ">
+      <div className="font-bold text-5xl text-orange-400 border-orange-400 border-b-2">
+        Dashboard
+      </div>
+      <MainStatsSection />
+    </div>
+  );
 };

@@ -14,11 +14,11 @@ export const Movies = () => {
     }
   };
   return (
-    <div className="m-10">
+    <div className="m-10 bg-white">
       <div className="grid grid-cols-2 bg-slate-200 rounded-2xl gap-5 shadow-xl">
         {/* Name input */}
         <div className="flex flex-col rounded-l-2xl p-10 gap-10">
-          <div className="flex flex-col gap-2">
+          <form className="flex flex-col gap-2">
             <label htmlFor="name" className="block text-lg font-semibold ">
               Киноны нэр
             </label>
@@ -28,9 +28,9 @@ export const Movies = () => {
               id="name"
               className="mt-1 block w-full py-2 px-2 border-slate-900 rounded-md shadow-sm"
             />
-          </div>
+          </form>
 
-          <div className="flex flex-col gap-2">
+          <form className="flex flex-col gap-2">
             <label htmlFor="name" className="block text-lg font-semibold ">
               Найруулагчийн нэр
             </label>
@@ -40,10 +40,10 @@ export const Movies = () => {
               id="name"
               className="mt-1 block w-full py-2 px-2 border-slate-900 rounded-md shadow-sm"
             />
-          </div>
+          </form>
 
           {/* Length of time input */}
-          <div className="flex flex-col gap-2">
+          <form className="flex flex-col gap-2">
             <label htmlFor="length" className="block text-lg font-semibold ">
               Кино үргэлжлэх хугацаа:
             </label>
@@ -53,9 +53,9 @@ export const Movies = () => {
               id="length"
               className="mt-1 block w-full py-2 px-2 border-slate-900 rounded-md shadow-sm"
             />
-          </div>
+          </form>
 
-          <div className="flex flex-col gap-2">
+          <form className="flex flex-col gap-2">
             <label htmlFor="language" className="block text-lg font-semibold ">
               Жүжигчид болон уран бүтээлчид
             </label>
@@ -65,9 +65,9 @@ export const Movies = () => {
               id="language"
               className="mt-1 block w-full py-2 px-2 border-slate-900 rounded-md shadow-sm"
             />
-          </div>
+          </form>
           {/* Category input */}
-          <div className="flex flex-col gap-2">
+          <form className="flex flex-col gap-2">
             <label htmlFor="category" className="block text-lg font-semibold ">
               Киноны жанр, төрөл зүйл
             </label>
@@ -77,10 +77,10 @@ export const Movies = () => {
               id="category"
               className="mt-1 block w-full py-2 px-2 border-slate-900 rounded-md shadow-sm"
             />
-          </div>
+          </form>
 
           {/* Language input */}
-          <div className="flex flex-col gap-2">
+          <form className="flex flex-col gap-2">
             <label htmlFor="language" className="block text-lg font-semibold ">
               Киноны тухай
             </label>
@@ -90,7 +90,7 @@ export const Movies = () => {
               id="language"
               className="mt-1 block w-full py-2 px-2 border-slate-900 rounded-md shadow-sm"
             />
-          </div>
+          </form>
         </div>
         <div className="flex flex-col justify-between bg-white shadow rounded-r-2xl p-10">
           <div>

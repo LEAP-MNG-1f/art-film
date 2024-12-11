@@ -31,9 +31,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="flex">
+        <div className="flex bg-slate-900">
           <ControlPanel />
-          <div className="flex flex-col w-full">
+          <div className="flex flex-col w-full ">
             <Header />
             {children}
           </div>
