@@ -17,7 +17,7 @@ export const DreamerDay = () => {
       <div className="grid grid-cols-2 bg-slate-200 rounded-2xl gap-5 shadow-xl">
         {/* Name input */}
         <div className="flex flex-col rounded-l-2xl p-10 gap-10">
-          <div className="flex flex-col gap-2">
+          <form className="flex flex-col gap-2">
             <label htmlFor="name" className="block text-lg font-semibold ">
               Киноны нэр
             </label>
@@ -27,9 +27,9 @@ export const DreamerDay = () => {
               id="name"
               className="mt-1 block w-full py-2 px-2 border-slate-900 rounded-md shadow-sm"
             />
-          </div>
+          </form>
 
-          <div className="flex flex-col gap-2">
+          <form className="flex flex-col gap-2">
             <label htmlFor="name" className="block text-lg font-semibold ">
               Найруулагчийн нэр
             </label>
@@ -39,10 +39,10 @@ export const DreamerDay = () => {
               id="name"
               className="mt-1 block w-full py-2 px-2 border-slate-900 rounded-md shadow-sm"
             />
-          </div>
+          </form>
 
           {/* Price input */}
-          <div className="flex flex-col gap-2">
+          <form className="flex flex-col gap-2">
             <label htmlFor="price" className="block text-lg font-semibold ">
               Тасалбарын үнэ
             </label>
@@ -52,10 +52,10 @@ export const DreamerDay = () => {
               id="price"
               className="mt-1 block w-full py-2 px-2 border-slate-900 rounded-md shadow-sm"
             />
-          </div>
+          </form>
 
           {/* Length of time input */}
-          <div className="flex flex-col gap-2">
+          <form className="flex flex-col gap-2">
             <label htmlFor="length" className="block text-lg font-semibold ">
               Кино үргэлжлэх хугацаа:
             </label>
@@ -65,10 +65,10 @@ export const DreamerDay = () => {
               id="length"
               className="mt-1 block w-full py-2 px-2 border-slate-900 rounded-md shadow-sm"
             />
-          </div>
+          </form>
 
           {/* Category input */}
-          <div className="flex flex-col gap-2">
+          <form className="flex flex-col gap-2">
             <label htmlFor="category" className="block text-lg font-semibold ">
               Киноны жанр, төрөл зүйл
             </label>
@@ -78,10 +78,10 @@ export const DreamerDay = () => {
               id="category"
               className="mt-1 block w-full py-2 px-2 border-slate-900 rounded-md shadow-sm"
             />
-          </div>
+          </form>
 
           {/* Language input */}
-          <div className="flex flex-col gap-2">
+          <form className="flex flex-col gap-2">
             <label htmlFor="language" className="block text-lg font-semibold ">
               Хэл
             </label>
@@ -91,9 +91,9 @@ export const DreamerDay = () => {
               id="language"
               className="mt-1 block w-full py-2 px-2 border-slate-900 rounded-md shadow-sm"
             />
-          </div>
+          </form>
 
-          <div className="flex flex-col gap-2">
+          <form className="flex flex-col gap-2">
             <label htmlFor="language" className="block text-lg font-semibold ">
               Хадмал хэл
             </label>
@@ -103,10 +103,10 @@ export const DreamerDay = () => {
               id="language"
               className="mt-1 block w-full py-2 px-2 border-slate-900 rounded-md shadow-sm"
             />
-          </div>
+          </form>
 
           {/* Location input */}
-          <div className="flex flex-col gap-2">
+          <form className="flex flex-col gap-2">
             <label htmlFor="location" className="block text-lg font-semibold ">
               Байршил
             </label>
@@ -116,7 +116,7 @@ export const DreamerDay = () => {
               id="location"
               className="mt-1 block w-full py-2 px-2 border-slate-900 rounded-md shadow-sm"
             />
-          </div>
+          </form>
         </div>
         <div className="flex flex-col justify-between bg-white shadow rounded-r-2xl p-10">
           <div>

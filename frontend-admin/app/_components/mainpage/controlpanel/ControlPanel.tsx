@@ -7,7 +7,7 @@ export const ControlPanel = () => {
   const pathname = usePathname();
 
   return (
-    <div className="h-screen bg-slate-900 pl-5">
+    <div className="flex flex-col h-screen pl-5 bg-slate-900">
       <div className="mb-10">
         <img width={350} src="/Icons/ArtfilmLogo.png" alt="" />
       </div>
