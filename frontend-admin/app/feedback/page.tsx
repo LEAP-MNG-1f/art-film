@@ -1,10 +1,9 @@
-import { Feedback } from "../_components/mainpage/controlpanel/Feedback";
+import { FeedbackMain } from "../_components/feedback/FeedbackMain";
 
 export default function Home() {
   return (
-    <div className="bg-white">
-      <Feedback />
-      <Feedback />
+    <div>
+      <FeedbackMain />
     </div>
   );
 }
