@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-export const Feedback = () => {
+export const FeedbackCreate = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   // Function to handle the image file change
