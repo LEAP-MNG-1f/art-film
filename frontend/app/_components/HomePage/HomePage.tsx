@@ -1,17 +1,18 @@
-import Desktop from "./Desktop";
+import MovieCard from "../movie/movieCard/MovieCard";
+import ArticleCard from "../article/articleCard/ArticleCard";
+
+import DreamersDayCard from "../dreamersDay/dreamersDayCard/DreamersDayCard";
 import Footer from "./Footer";
-import MainDreamerCart from "./cart/MainDreamerCart";
-import MainMovie from "./cart/MainMovie";
-import MainPost from "./cart/MainPost";
+import Carousel from "./Carousel";
 
 const HomePage = () => {
   return (
     <div className="flex flex-col justify-center">
-      <Desktop />
-      <div className="flex flex-col gap-9 pt-10">
-        <MainDreamerCart />
-        <MainPost />
-        <MainMovie />
+      <Carousel />
+      <div className="flex flex-col gap-9 ">
+        <DreamersDayCard />
+        <ArticleCard />
+        <MovieCard />
       </div>
       <Footer />
     </div>

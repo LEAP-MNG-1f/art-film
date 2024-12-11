@@ -1,17 +1,16 @@
-import HeaderPage from "../article/Header";
 import Footer from "../homePage/Footer";
-import DreamersBody from "./dreamersDayCard/DreamersBody";
-import RecommendDreamers from "../homePage/Recommend";
 import Recommend from "../homePage/Recommend";
+import ArticleBody from "./articleCard/ArticleBody";
+import HeaderPage from "./Header";
 
-const DreamersDayPage = () => {
+const ArticlePage = () => {
   return (
     <div className="flex justify-center">
-      <div>
+      <div className="">
         <HeaderPage />
         <div className="py-10">
-          <DreamersBody />
           <Recommend />
+          <ArticleBody />
         </div>
         <Footer />
       </div>
@@ -19,4 +18,4 @@ const DreamersDayPage = () => {
   );
 };
 
-export default DreamersDayPage;
+export default ArticlePage;
