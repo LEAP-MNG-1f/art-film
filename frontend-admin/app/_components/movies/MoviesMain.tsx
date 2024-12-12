@@ -3,7 +3,7 @@ import { MoviesHeader } from "./MoviesHeader";
 
 export const MoviesMain = () => {
   return (
-    <div className="flex flex-col gap-8 bg-white px-5 py-5">
+    <div className="flex flex-col gap-8 py-5">
       <MoviesHeader />
       <MockDataMovie
         author="George"
