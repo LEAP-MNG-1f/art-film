@@ -3,11 +3,10 @@
 import { useState } from "react";
 
 export const FeedbackCreate = () => {
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
-  // Function to handle the image file change
-  const handleImageChange = (event) => {
-    const file = event.target.files[0];
+  const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
     if (file) {
       const imageURL = URL.createObjectURL(file);
       setSelectedImage(imageURL);

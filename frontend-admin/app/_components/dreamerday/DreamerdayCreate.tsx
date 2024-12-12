@@ -1,17 +1,17 @@
 "use client";
 import { useState } from "react";
 
-export const DreamerDay = () => {
-  const [selectedImage, setSelectedImage] = useState(null);
+export const DreamerdayCreate = () => {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
-  // Function to handle the image file change
-  const handleImageChange = (event) => {
-    const file = event.target.files[0];
+  const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
     if (file) {
       const imageURL = URL.createObjectURL(file);
       setSelectedImage(imageURL);
     }
   };
+
   return (
     <div className="m-10">
       <div className="grid grid-cols-2 bg-slate-200 rounded-2xl gap-5 shadow-xl">

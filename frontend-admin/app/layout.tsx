@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { ControlPanel } from "./_components/mainpage/controlpanel/ControlPanel";
-import { MainContainer } from "./_components/mainpage/maincontainer/MainContainer";
 import { Header } from "./_components/mainpage/maincontainer/Header";
 
 const geistSans = localFont({
@@ -31,13 +30,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="flex">
-          <ControlPanel />
-          <div className="flex flex-col w-full ml-[365px]">
-            <Header />
-            <div className="pt-[70px]">{children}</div>
-          </div>
-        </div>
+        {children}
       </body>
     </html>
   );
