@@ -1,9 +1,9 @@
 import { SearchIcon } from "@/public/Icons/SvgFiles";
 
-export const FeedbackHeader = () => {
+export const MoviesHeader = () => {
   return (
     <div className="flex justify-between items-center">
-      <div className="text-xl font-semibold">Feedback editor</div>
+      <div className="text-xl font-semibold">Movies editor</div>
       <div className="flex items-center w-[1200] bg-slate-300 pl-2 rounded-xl">
         <div className="w-8">
           <SearchIcon />

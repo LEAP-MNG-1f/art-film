@@ -1,6 +1,4 @@
-import { DreamerDay } from "../controlpanel/DreamerDay";
 import { MainStatsSection } from "./MainStatsSection";
-import { StatsCard } from "./StatsCard";
 
 export const MainContainer = () => {
   return (
