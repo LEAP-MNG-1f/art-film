@@ -10,7 +10,7 @@ export const MainContainer = () => {
         <Header />
         <div className="px-5 py-5">
           <div className="font-bold mt-[60] text-5xl text-orange-400 border-orange-400 border-b-2">
-            Dashboar
+            Dashboard
           </div>
           <MainStatsSection />
         </div>
