@@ -7,7 +7,7 @@ type FeedbackType = {
 
 export const MockDataFeed = (props: FeedbackType) => {
   return (
-    <div className="grid grid-cols-6 items-center gap-5 text-lg rounded-3xl py-3 border-r-2 bg-orange-100">
+    <div className="grid grid-cols-6 items-center gap-5 text-lg rounded-3xl py-3 border-r-2 bg-orange-100 shadow-xl">
       <div className="flex pl-10 border-slate-500 border-r-2">
         <img width={80} src="/test1.png" alt="" />
       </div>
