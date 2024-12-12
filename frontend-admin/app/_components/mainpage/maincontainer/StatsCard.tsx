@@ -1,6 +1,9 @@
+import { ButtonCardBO } from "../../utils/ButtonCard";
+
 type StatType = {
   title: string;
   util: string;
+  router: string;
   contentnumber: number;
   viewnumber: number;
   likenumber: number;
@@ -10,7 +13,9 @@ type StatType = {
 export const StatsCard = (props: StatType) => {
   return (
     <div className="flex flex-col gap-5">
-      <div className="text-2xl">{props.title}</div>
+      <div className="text-2xl text-slate-900">
+        <ButtonCardBO title={props.title} route={props.router} />
+      </div>
       <div className="flex bg-slate-900 h-[300] text-white">
         <div className="text-orange-400 text-[300px] leading-none px-2">
           {props.util}

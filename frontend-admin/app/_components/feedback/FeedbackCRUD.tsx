@@ -1,11 +1,7 @@
 import { FeedbackCreate } from "./FeedbackCreate";
 import { FeedbackRead } from "./FeedbackRead";
-import { MockData } from "./MockData";
+import { MockData } from "./MockDataFeed";
 
 export const FeedbackCRUD = () => {
-  return (
-    <div>
-      <MockData />
-    </div>
-  );
+  return <div>CRUD</div>;
 };

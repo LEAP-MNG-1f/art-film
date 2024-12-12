@@ -4,6 +4,7 @@ export const MainStatsSection = () => {
     <div className="grid grid-cols-3 gap-16 pt-5">
       <StatsCard
         title="Dreamer's Day"
+        router="dreamer-day"
         util="A"
         contentnumber={53}
         viewnumber={8532}
@@ -12,6 +13,7 @@ export const MainStatsSection = () => {
       />
       <StatsCard
         title="Movies"
+        router="movies"
         util="R"
         contentnumber={53}
         viewnumber={8532}
@@ -19,7 +21,8 @@ export const MainStatsSection = () => {
         commentnumber={86}
       />
       <StatsCard
-        title="Dreamer's Day"
+        title="Feedback"
+        router="feedback"
         util="T"
         contentnumber={53}
         viewnumber={8532}

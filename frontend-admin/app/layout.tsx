@@ -31,11 +31,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="flex bg-slate-900">
+        <div className="flex">
           <ControlPanel />
-          <div className="flex flex-col w-full ">
+          <div className="flex flex-col w-full ml-[365px]">
             <Header />
-            {children}
+            <div className="pt-[70px]">{children}</div>
           </div>
         </div>
       </body>
