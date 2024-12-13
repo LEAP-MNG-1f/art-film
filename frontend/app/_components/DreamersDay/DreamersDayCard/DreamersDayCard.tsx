@@ -55,7 +55,7 @@ const DreamersDayCard = () => {
 
               <div className="flex flex-col justify-between">
                 <img
-                  className="h-[184px] w-[318px] rounded-lg object-cover"
+                  className="h-[184px] w-[318px] rounded-lg object-cover "
                   src="https://dx35vtwkllhj9.cloudfront.net/universalstudios/wicked/images/regions/us/share.jpg"
                   alt="Small Image 1"
                 />

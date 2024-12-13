@@ -16,34 +16,48 @@ const Footer = () => {
 
           <div className="ml-10 lg:flex-row flex flex-col gap-12  lg:gap-10">
             <div className="mb-4 flex flex-col gap-3">
-              <p className="text-[16px] font-bold text-white">Булангууд</p>
-              <p className="text-white/60 text-[14px] font-bold">Нүүр</p>
-              <p className="text-white/60 text-[14px] font-bold">
+              <p className="text-white font-roboto text-[12px] font-medium leading-normal">
+                Булангууд
+              </p>
+              <p className="text-white/60  text-[14px] font-bold">Нүүр</p>
+              <p className="text-[rgba(255,255,255,0.57)] font-roboto text-[12px] font-normal leading-normal">
                 Dreamers’ day
               </p>
-              <p className="text-white/60 text-[14px] font-bold">Кино</p>
+              <p className="text-[rgba(255,255,255,0.57)] font-roboto text-[12px] font-normal leading-normal">
+                Кино
+              </p>
             </div>
             <div className="w-[174px] flex flex-col gap-3">
-              <p className="text-[16px] font-bold text-white">Компани</p>
-              <p className="text-white/60 text-[14px] font-bold">
+              <p className="text-white font-roboto text-[12px] font-medium leading-normal">
+                Компани
+              </p>
+              <p className="text-[rgba(255,255,255,0.57)] font-roboto text-[12px] font-normal leading-normal">
                 Улаанбаатар 14240, СБД, 8-р хороо, Амарын гудамж, Тэнгэрлиг
                 медиа групп
               </p>
-              <p className="text-white/60 text-[14px] font-bold">9999999</p>
-              <p className="text-white/60 text-[14px] font-bold">
+              <p className="text-[rgba(255,255,255,0.57)] font-roboto text-[12px] font-normal leading-normal">
+                9999999
+              </p>
+              <p className="text-[rgba(255,255,255,0.57)] font-roboto text-[12px] font-normal leading-normal">
                 altankhalisngo@gmail.com
               </p>
             </div>
           </div>
         </div>
         <div className="flex justify-between pt-10 items-center">
-          <p className="text-[#999999] font-bold">
+          <p className="text-[rgba(255,255,255,0.57)] font-roboto text-[12px] font-normal leading-normal">
             @2024 Altan Khalis, All Rights Reserved
           </p>
           <div className="flex gap-2">
-            <p className="text-[#999999] font-bold">Terms of Use</p>
-            <p className="text-[#999999] font-bold">Privacy Policy</p>
-            <p className="text-[#999999] font-bold">Cookie Policy</p>
+            <p className="text-[rgba(255,255,255,0.57)] font-roboto text-[12px] font-normal leading-normal">
+              Terms of Use
+            </p>
+            <p className="text-[rgba(255,255,255,0.57)] font-roboto text-[12px] font-normal leading-normal">
+              Privacy Policy
+            </p>
+            <p className="text-[rgba(255,255,255,0.57)] font-roboto text-[12px] font-normal leading-normal">
+              Cookie Policy
+            </p>
           </div>
         </div>
       </div>

@@ -18,7 +18,7 @@ const HeaderPage = () => {
         <div className="flex lg:w-[520px] lg:gap-10 w-screen justify-between items-center ">
           <Link
             href="./"
-            className="text-[16px] font-bold text-black hover:text-[#F8941E]"
+            className=" font-roboto text-[16px] font-semibold leading-normal hover:text-[#F8941E]"
           >
             <img
               src="/Icons/ArtfilmLogo.png"
@@ -30,19 +30,19 @@ const HeaderPage = () => {
           <nav className="lg:flex lg:gap-20 hidden">
             <Link
               href="/dreamers-day"
-              className="text-[16px] font-bold text-black hover:text-[#F8941E]"
+              className="text-black font-roboto text-[16px] font-semibold leading-normal hover:text-[#F8941E]"
             >
               Dreamers
             </Link>
             <Link
               href="/movies"
-              className="text-[16px] font-bold text-black hover:text-[#F8941E]"
+              className="text-black font-roboto text-[16px] font-semibold leading-normal hover:text-[#F8941E]"
             >
               Кино
             </Link>
             <Link
               href="/articles"
-              className="text-[16px] font-bold text-black hover:text-[#F8941E]"
+              className="text-black font-roboto text-[16px] font-semibold leading-normal hover:text-[#F8941E]"
             >
               Нийтлэл
             </Link>

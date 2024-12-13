@@ -4,7 +4,10 @@ const DreamersBody = () => {
   return (
     <div className="flex justify-center">
       <div className="w-[1040px]">
-        <p className="text-[32px] font-bold text-start pb-6"> DREAMERS’ DAY</p>
+        <p className="text-black font-['Helvetica Neue'] text-[32px] font-bold leading-[24px] pb-8">
+          {" "}
+          DREAMERS’ DAY
+        </p>
         <div className="w-[1040px] h-[774px] flex flex-col gap-4">
           <img
             className="w-[1044px] h-[502px] rounded-lg"
@@ -24,7 +27,7 @@ const DreamersBody = () => {
             </div>
           </div>
           <div>
-            <p className=" flex items-center gap-1 justify-end">
+            <p className=" flex items-center gap-1 justify-end text-[#09090B] font-roboto text-[14px] font-normal leading-[24px]">
               ЦААШ ХАРАХ
               <BsChevronRight className="text-[#F8941E]" />
             </p>
