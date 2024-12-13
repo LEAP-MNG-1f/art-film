@@ -1,12 +1,14 @@
-
 import React from "react";
-
+import { FaFireFlameCurved } from "react-icons/fa6";
 const Recommend = () => {
   return (
     <div className="flex justify-center px-4 lg:px-0 pb-10">
       <div className="w-full lg:w-[1040px] flex flex-col gap-4">
         <div className="flex justify-between items-center h-[44px] ">
-          <p className="font-bold text-[24px]">Таньд санал болгох</p>
+          <p className="font-bold text-[24px] flex items-center gap-2">
+            <FaFireFlameCurved />
+            Таньд санал болгох
+          </p>
         </div>
 
         <div className="w-full">

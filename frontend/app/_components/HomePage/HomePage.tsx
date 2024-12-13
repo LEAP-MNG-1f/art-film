@@ -9,7 +9,7 @@ const HomePage = () => {
   return (
     <div className="flex flex-col justify-center">
       <Carousel />
-      <div className="flex flex-col gap-9 ">
+      <div className="flex flex-col gap-12 ">
         <DreamersDayCard />
         <ArticleCard />
         <MovieCard />

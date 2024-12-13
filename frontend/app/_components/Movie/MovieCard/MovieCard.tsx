@@ -7,10 +7,14 @@ const MovieCard = () => {
   return (
     <div className="flex justify-center pb-10 px-4 lg:px-0">
       <div className="w-full lg:w-[1040px] flex flex-col gap-4">
-        <div className="flex justify-between h-[44px] lg:w-[1040px] border border-t-[#00000080] border-t-2 items-center border-l-white border-b-white border-r-white">
-          <p className="font-bold">КИНО</p>
+        <div className="flex justify-between h-[44px] lg:w-[1040px] ">
+          <p className="text-black font-roboto-condensed text-[32px] font-semibold leading-[24px]">
+            КИНО
+          </p>
           <Link href="/movies" className="flex gap-1 items-center">
-            <p className="font-bold"> БҮГДИЙГ ХАРАХ</p>
+            <p className="text-black font-roboto text-[14px] font-normal leading-[24px]">
+              БҮГДИЙГ ХАРАХ
+            </p>
             <div>
               <BsChevronRight className="text-[#F8941E]" />
             </div>
@@ -30,11 +34,11 @@ const MovieCard = () => {
                     </div>
                   </div>
 
-                  <div className="flex flex-col lg:flex-row gap-[13px] rounded-lg hover:shadow-lg p-4 border border-inset w-[336px] lg:w-[1040px]">
+                  <div className="flex flex-col lg:flex-row gap-[13px] rounded-lg hover:shadow-lg  w-[336px] lg:w-[1040px]">
                     <img
                       src="https://dx35vtwkllhj9.cloudfront.net/universalstudios/wicked/images/regions/us/share.jpg"
                       alt=""
-                      className="w-full h-[174px] rounded-lg object-cover"
+                      className="w-[325px] h-[174px] rounded-lg object-cover"
                     />
                     <div>
                       <p className="text-[20px] font-bold mb-2">
