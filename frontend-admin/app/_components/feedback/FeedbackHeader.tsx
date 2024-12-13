@@ -4,10 +4,8 @@ import { SearchIcon } from "@/public/Icons/SvgFiles";
 import { FeedbackCreate } from "./FeedbackCreate";
 
 export const FeedbackHeader = () => {
-  // Step 1: State for managing the modal visibility
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Step 2: Toggle the modal visibility
   const handleModalOpen = () => setIsModalOpen(true);
   const handleModalClose = () => setIsModalOpen(false);
 
@@ -24,7 +22,7 @@ export const FeedbackHeader = () => {
           type="search"
         />
       </div>
-      {/* Step 3: Button triggers modal */}
+
       <button
         className="px-5 py-1 rounded-2xl font-semibold bg-orange-400 text-black hover:bg-slate-900 hover:text-white"
         onClick={handleModalOpen}
@@ -32,7 +30,6 @@ export const FeedbackHeader = () => {
         Create
       </button>
 
-      {/* Step 4: Modal Component */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
           <div className="w-[800] bg-white rounded-lg shadow-lg relative">
