@@ -17,7 +17,7 @@ const MainHeader = () => {
       <div className="flex lg:w-[520px] lg:gap-10 w-screen justify-between items-center ">
         <Link
           href="./"
-          className="text-[16px] font-bold text-white hover:text-[#F8941E]"
+          className="text-white font-roboto text-[16px] font-semibold leading-normal hover:text-[#F8941E]"
         >
           <img
             src="/Icons/ArtfilmLogo.png"
@@ -29,19 +29,19 @@ const MainHeader = () => {
         <nav className="lg:flex lg:gap-20 hidden">
           <Link
             href="/dreamers-day"
-            className="text-[16px] font-bold text-white hover:text-[#F8941E]"
+            className="text-white font-roboto text-[16px] font-semibold leading-normal hover:text-[#F8941E]"
           >
             Dreamers
           </Link>
           <Link
             href="/movies"
-            className="text-[16px] font-bold text-white hover:text-[#F8941E]"
+              className="text-white font-roboto text-[16px] font-semibold leading-normal hover:text-[#F8941E]"
           >
             Кино
           </Link>
           <Link
             href="/articles"
-            className="text-[16px] font-bold text-white hover:text-[#F8941E]"
+             className="text-white font-roboto text-[16px] font-semibold leading-normal hover:text-[#F8941E]"
           >
             Нийтлэл
           </Link>

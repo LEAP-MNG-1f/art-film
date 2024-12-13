@@ -1,5 +1,5 @@
 import React from "react";
-
+import { BsChevronRight } from "react-icons/bs";
 const DreamersBody = () => {
   return (
     <div className="flex justify-center">
@@ -24,7 +24,10 @@ const DreamersBody = () => {
             </div>
           </div>
           <div>
-            <p className="text-end">ЦААШ ХАРАХ </p>
+            <p className=" flex items-center gap-1 justify-end">
+              ЦААШ ХАРАХ
+              <BsChevronRight className="text-[#F8941E]" />
+            </p>
           </div>
         </div>
       </div>

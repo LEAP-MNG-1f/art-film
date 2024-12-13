@@ -6,24 +6,26 @@ const DreamersDayCard = () => {
   return (
     <div className="lg:flex lg:justify-center">
       <div className="lg:w-screen h-auto relative">
-        <div className="h-[150px] lg:h-[253px] bg-black z-0 shadow-black shadow-lg"></div>
+        <div className="h-[150px] lg:h-[318px] bg-black z-0 shadow-black shadow-lg"></div>
 
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 flex flex-col px-4 lg:pb-6 pb-4 gap-6 w-full lg:w-[1040px]">
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 flex flex-col px-4 lg:pb-5 pb-4 gap-4 pt-[43px] w-full lg:w-[1040px]">
           <div className="flex justify-between items-center">
-            <p className="font-bold text-white text-lg lg:text-xl">
+            <p className="text-white font-roboto-condensed text-[32px] font-semibold leading-[24px]">
               DREAMERS’ DAY
             </p>
             <Link
               href="/dreamers-day"
               className="font-bold text-white text-sm lg:text-base flex items-center gap-1"
             >
-              <p className="font-bold"> БҮГДИЙГ ХАРАХ</p>
+              <p className="text-white font-roboto text-[14px] font-normal leading-[24px]">
+                БҮГДИЙГ ХАРАХ
+              </p>
               <div>
                 <BsChevronRight className="text-[#F8941E]" />
               </div>
             </Link>
           </div>
-          o
+
           <div className="lg:flex lg:gap-8">
             <div className="flex gap-4 overflow-x-scroll scrollbar-hide lg:hidden">
               <img
@@ -31,6 +33,7 @@ const DreamersDayCard = () => {
                 src="https://dx35vtwkllhj9.cloudfront.net/universalstudios/wicked/images/regions/us/share.jpg"
                 alt="Main Image"
               />
+
               <img
                 className="h-[150px] w-[250px] rounded-lg object-cover flex-shrink-0"
                 src="https://dx35vtwkllhj9.cloudfront.net/universalstudios/wicked/images/regions/us/share.jpg"
@@ -50,7 +53,7 @@ const DreamersDayCard = () => {
                 alt="Main Image"
               />
 
-              <div className="flex flex-col gap-3">
+              <div className="flex flex-col justify-between">
                 <img
                   className="h-[184px] w-[318px] rounded-lg object-cover"
                   src="https://dx35vtwkllhj9.cloudfront.net/universalstudios/wicked/images/regions/us/share.jpg"

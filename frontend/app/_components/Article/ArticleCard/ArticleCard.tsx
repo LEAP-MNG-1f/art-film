@@ -5,10 +5,15 @@ function ArticleCard() {
   return (
     <div className="flex justify-center px-4 lg:px-0">
       <div className="w-full lg:w-[1040px] flex flex-col gap-4">
-        <div className="flex justify-between items-center h-[44px] border-t border-t-[#00000080] border-l-white border-b-white border-r-white">
-          <p className="font-bold">НИЙТЛЭЛ</p>
+        <div className="flex justify-between items-center h-[44px]">
+          <p className="text-black font-roboto-condensed text-[32px] font-semibold leading-[24px]">
+            НИЙТЛЭЛ
+          </p>
           <Link href="/blogs" className="font-bold flex gap-1 items-center">
-            <p className="font-bold"> БҮГДИЙГ ХАРАХ</p>
+            <p className="text-black font-roboto text-[14px] font-normal leading-[24px]">
+           
+              БҮГДИЙГ ХАРАХ
+            </p>
             <div>
               <BsChevronRight className="text-[#F8941E]" />
             </div>
@@ -21,7 +26,7 @@ function ArticleCard() {
               {[...Array(3)].map((_, index) => (
                 <div
                   key={index}
-                  className="flex flex-col gap-[13px] rounded-lg hover:shadow-lg p-4 border border-inset w-[336px] lg:w-[350px]" // Set the width to 336px for mobile and 350px for large screens
+                  className="flex flex-col gap-[13px] rounded-lg hover:shadow-lg   w-[336px] lg:w-[350px]" 
                 >
                   <img
                     src="https://dx35vtwkllhj9.cloudfront.net/universalstudios/wicked/images/regions/us/share.jpg"
