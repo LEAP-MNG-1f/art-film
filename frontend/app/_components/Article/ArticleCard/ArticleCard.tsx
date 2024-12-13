@@ -1,22 +1,22 @@
 import Link from "next/link";
 import React from "react";
-
+import { BsChevronRight } from "react-icons/bs";
 function ArticleCard() {
   return (
     <div className="flex justify-center px-4 lg:px-0">
       <div className="w-full lg:w-[1040px] flex flex-col gap-4">
-
         <div className="flex justify-between items-center h-[44px] border-t border-t-[#00000080] border-l-white border-b-white border-r-white">
           <p className="font-bold">НИЙТЛЭЛ</p>
-          <Link href="/blogs" className="font-bold">
-            БҮГДИЙГ ХАРАХ
+          <Link href="/blogs" className="font-bold flex gap-1 items-center">
+            <p className="font-bold"> БҮГДИЙГ ХАРАХ</p>
+            <div>
+              <BsChevronRight className="text-[#F8941E]" />
+            </div>
           </Link>
         </div>
 
-      
         <div className="w-full">
           <div className="overflow-x-auto">
-           
             <div className="flex gap-6 lg:gap-4">
               {[...Array(3)].map((_, index) => (
                 <div
