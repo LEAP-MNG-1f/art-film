@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import { BsChevronRight } from "react-icons/bs";
 
 const DreamersDayCard = () => {
   return (
@@ -14,12 +15,15 @@ const DreamersDayCard = () => {
             </p>
             <Link
               href="/dreamers-day"
-              className="font-bold text-white text-sm lg:text-base"
+              className="font-bold text-white text-sm lg:text-base flex items-center gap-1"
             >
-              БҮГДИЙГ ХАРАХ
+              <p className="font-bold"> БҮГДИЙГ ХАРАХ</p>
+              <div>
+                <BsChevronRight className="text-[#F8941E]" />
+              </div>
             </Link>
           </div>
-
+          o
           <div className="lg:flex lg:gap-8">
             <div className="flex gap-4 overflow-x-scroll scrollbar-hide lg:hidden">
               <img

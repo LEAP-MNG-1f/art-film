@@ -47,7 +47,7 @@ const MovieBody = () => {
           </div>
         </div>
 
-        <div className="w-[240px] flex justify-center pt-[60px]">
+        <div className=" w-[240px] flex justify-center pt-[60px]">
           <div className="w-[224px] flex flex-col gap-4 px-4">
             <p className="text-[20px] font-bold">Жанр</p>
             <p>Бүгд</p>
