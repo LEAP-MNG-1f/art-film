@@ -1,0 +1,151 @@
+/Users/24LP0022/Desktop/art-film/backend/src
+├── config
+|  ├── cloudinary.js
+|  └── database.js
+├── controllers
+|  ├── auth.controller.js
+|  └── movies.controller.js
+├── middleware
+|  ├── errorHandler.js
+|  └── validation.middleware.js
+├── models
+|  ├── movie.model.js
+|  └── user.model.js
+├── node_modules
+|  ├── @mongodb-js
+|  ├── @types
+|  ├── accepts
+|  ├── anymatch
+|  ├── array-flatten
+|  ├── balanced-match
+|  ├── binary-extensions
+|  ├── body-parser
+|  ├── brace-expansion
+|  ├── braces
+|  ├── bson
+|  ├── bytes
+|  ├── call-bind
+|  ├── call-bind-apply-helpers
+|  ├── chokidar
+|  ├── cloudinary
+|  ├── concat-map
+|  ├── content-disposition
+|  ├── content-type
+|  ├── cookie
+|  ├── cookie-signature
+|  ├── cors
+|  ├── debug
+|  ├── define-data-property
+|  ├── depd
+|  ├── destroy
+|  ├── dotenv
+|  ├── dunder-proto
+|  ├── ee-first
+|  ├── encodeurl
+|  ├── es-define-property
+|  ├── es-errors
+|  ├── escape-html
+|  ├── etag
+|  ├── express
+|  ├── express-mongo-sanitize
+|  ├── express-rate-limit
+|  ├── express-validator
+|  ├── fill-range
+|  ├── finalhandler
+|  ├── forwarded
+|  ├── fresh
+|  ├── fsevents
+|  ├── function-bind
+|  ├── get-intrinsic
+|  ├── glob-parent
+|  ├── gopd
+|  ├── has-flag
+|  ├── has-property-descriptors
+|  ├── has-symbols
+|  ├── hasown
+|  ├── helmet
+|  ├── http-errors
+|  ├── iconv-lite
+|  ├── ignore-by-default
+|  ├── inherits
+|  ├── ipaddr.js
+|  ├── is-binary-path
+|  ├── is-extglob
+|  ├── is-glob
+|  ├── is-number
+|  ├── kareem
+|  ├── lodash
+|  ├── media-typer
+|  ├── memory-pager
+|  ├── merge-descriptors
+|  ├── methods
+|  ├── mime
+|  ├── mime-db
+|  ├── mime-types
+|  ├── minimatch
+|  ├── mongodb
+|  ├── mongodb-connection-string-url
+|  ├── mongoose
+|  ├── mongoose-paginate-v2
+|  ├── mpath
+|  ├── mquery
+|  ├── ms
+|  ├── negotiator
+|  ├── node
+|  ├── node-bin-setup
+|  ├── nodemon
+|  ├── normalize-path
+|  ├── object-assign
+|  ├── object-inspect
+|  ├── on-finished
+|  ├── parseurl
+|  ├── path-to-regexp
+|  ├── picomatch
+|  ├── proxy-addr
+|  ├── pstree.remy
+|  ├── punycode
+|  ├── q
+|  ├── qs
+|  ├── range-parser
+|  ├── raw-body
+|  ├── readdirp
+|  ├── safe-buffer
+|  ├── safer-buffer
+|  ├── semver
+|  ├── send
+|  ├── serve-static
+|  ├── set-function-length
+|  ├── setprototypeof
+|  ├── side-channel
+|  ├── sift
+|  ├── simple-update-notifier
+|  ├── sparse-bitfield
+|  ├── statuses
+|  ├── supports-color
+|  ├── to-regex-range
+|  ├── toidentifier
+|  ├── touch
+|  ├── tr46
+|  ├── type-is
+|  ├── undefsafe
+|  ├── unpipe
+|  ├── utils-merge
+|  ├── validator
+|  ├── vary
+|  ├── webidl-conversions
+|  ├── whatwg-url
+|  ├── xss-clean
+|  └── xss-filters
+├── package-lock.json
+├── package.json
+├── routes
+|  ├── auth.route.js
+|  └── movie.route.js
+├── server.js
+├── utils
+|  ├── catchAsync.js
+|  └── validation.js
+└── xss-clean.d.ts
+
+directory: 131 file: 16
+

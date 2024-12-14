@@ -1,0 +1,36 @@
+/Users/24LP0022/Desktop/art-film
+├── backend
+|  ├── src
+|  └── strapi
+├── frontend
+|  ├── README.md
+|  ├── app
+|  ├── lib
+|  ├── next-env.d.ts
+|  ├── next.config.ts
+|  ├── node_modules
+|  ├── package-lock.json
+|  ├── package.json
+|  ├── postcss.config.mjs
+|  ├── privacy-policy-artfilm.html
+|  ├── public
+|  ├── tailwind.config.ts
+|  ├── terms-and-conditions.html
+|  ├── tsconfig.json
+|  └── yarn.lock
+├── frontend-admin
+|  ├── README.md
+|  ├── app
+|  ├── next-env.d.ts
+|  ├── next.config.ts
+|  ├── node_modules
+|  ├── package-lock.json
+|  ├── package.json
+|  ├── postcss.config.mjs
+|  ├── public
+|  ├── tailwind.config.ts
+|  └── tsconfig.json
+└── output.txt
+
+directory: 12 file: 20
+

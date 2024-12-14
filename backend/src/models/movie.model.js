@@ -1,66 +1,3 @@
-// import mongoose, { Schema, model } from "mongoose";
-
-// // Define the Movie Schema
-// const movieSchema = new Schema({
-//   title: {
-//     type: String,
-//     required: true,
-//   },
-//   releaseYear: {
-//     type: Number,
-//     required: true,
-//   },
-//   genre: {
-//     type: [String], // Array of genres
-//     required: true,
-//   },
-//   rating: {
-//     type: Number,
-//     min: 0,
-//     max: 10,
-//     required: true,
-//   },
-//   director: {
-//     type: String,
-//     required: true,
-//   },
-//   actors: {
-//     type: [String], // Array of actors
-//     required: true,
-//   },
-//   reviews: [
-//     {
-//       user: {
-//         type: String,
-//         required: true,
-//       },
-//       rating: {
-//         type: Number,
-//         min: 0,
-//         max: 5,
-//         required: true,
-//       },
-//       comment: {
-//         type: String,
-//         required: true,
-//       },
-//     },
-//   ],
-//   createdAt: {
-//     type: Date,
-//     default: Date.now,
-//   },
-//   updatedAt: {
-//     type: Date,
-//     default: Date.now,
-//   },
-// });
-
-// // Create the Movie Model
-// const Movie = mongoose.model("Movie", movieSchema);
-
-// export default Movie;
-
 import mongoose from "mongoose";
 import mongoosePaginate from "mongoose-paginate-v2";
 
@@ -78,7 +15,7 @@ const movieSchema = new mongoose.Schema({
     min: [1900, "Гарсан он хамгийн багадаа 1900 байна"],
     max: [
       new Date().getFullYear(),
-      "Гарсан он одоогийн онаас хойш байж болохгүй",
+      "Гарсан он одоогийн онooс хойш байж болохгүй",
     ],
   },
   genre: {
@@ -91,6 +28,24 @@ const movieSchema = new mongoose.Schema({
       message: "Жанрын жагсаалт хоосон байж болохгүй",
     },
   },
+  writer: {
+    type: [String],
+    required: [true, "Зохиолч заавал шаардлагатай"],
+  },
+  director: {
+    type: [String],
+    required: [true, "Найруулагч заавал шаардлагатай"],
+  },
+  rating: {
+    type: Number,
+    default: 0,
+    min: [0],
+    max: [10, "Рейтинг хамгийн ихдээ 10 байх ёстой"],
+  },
+  trailerUrl: { type: String },
+  imageUrl: { type: String, required: true },
+  relatedMovies: [{ type: mongoose.Schema.Types.ObjectId, ref: "Movies" }],
+  createdAt: { type: Date, default: Date.now },
 });
 
 movieSchema.plugin(mongoosePaginate);
