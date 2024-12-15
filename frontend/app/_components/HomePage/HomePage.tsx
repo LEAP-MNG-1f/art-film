@@ -4,17 +4,19 @@ import ArticleCard from "../article/articleCard/ArticleCard";
 import DreamersDayCard from "../dreamersDay/dreamersDayCard/DreamersDayCard";
 import Footer from "./Footer";
 import Carousel from "./Carousel";
+import SingelPage from "../dreamersDay/single-dreamersday/SinglePage";
 
 const HomePage = () => {
   return (
     <div className="flex flex-col justify-center">
-      <Carousel />
+      {/* <Carousel />
       <div className="flex flex-col gap-12 ">
         <DreamersDayCard />
         <ArticleCard />
         <MovieCard />
       </div>
-      <Footer />
+      <Footer /> */}
+      <SingelPage />
     </div>
   );
 };

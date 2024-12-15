@@ -5,7 +5,6 @@ const DreamersBody = () => {
     <div className="flex justify-center">
       <div className="w-[1040px]">
         <p className="text-black font-['Helvetica Neue'] text-[32px] font-bold leading-[24px] pb-8">
-          {" "}
           DREAMERS’ DAY
         </p>
         <div className="w-[1040px] h-[774px] flex flex-col gap-4">
