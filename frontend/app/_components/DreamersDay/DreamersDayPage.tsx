@@ -1,8 +1,8 @@
-import HeaderPage from "../article/Header";
-import Footer from "../homePage/Footer";
-import DreamersBody from "./dreamersDayCard/DreamersBody";
-import RecommendDreamers from "../homePage/Recommend";
-import Recommend from "../homePage/Recommend";
+import HeaderPage from "../Article/Header";
+import Footer from "../HomePage/Footer";
+import DreamersBody from "./DreamersDayCard/DreamersBody";
+import RecommendDreamers from "../HomePage/Recommend";
+import Recommend from "../HomePage/Recommend";
 
 const DreamersDayPage = () => {
   return (

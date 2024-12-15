@@ -1,4 +1,4 @@
-import SingelPage from "@/app/_components/dreamersDay/single-dreamersday/SinglePage";
+import SingelPage from "@/app/_components/DreamersDay/SingleDreamersDay/SinglePage";
 import React from "react";
 
 const page = () => {

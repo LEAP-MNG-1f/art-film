@@ -35,13 +35,13 @@ const MainHeader = () => {
           </Link>
           <Link
             href="/movies"
-              className="text-white font-roboto text-[16px] font-semibold leading-normal hover:text-[#F8941E]"
+            className="text-white font-roboto text-[16px] font-semibold leading-normal hover:text-[#F8941E]"
           >
             Кино
           </Link>
           <Link
             href="/articles"
-             className="text-white font-roboto text-[16px] font-semibold leading-normal hover:text-[#F8941E]"
+            className="text-white font-roboto text-[16px] font-semibold leading-normal hover:text-[#F8941E]"
           >
             Нийтлэл
           </Link>

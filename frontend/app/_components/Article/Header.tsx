@@ -4,7 +4,7 @@ import { BurgerIconBlack, SearchIcon } from "@/public/Icons/Icons";
 import Link from "next/link";
 import { useState } from "react";
 
-const HeaderPage = () => {
+const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -95,4 +95,5 @@ const HeaderPage = () => {
   );
 };
 
-export default HeaderPage;
+export default Header
+;

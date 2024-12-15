@@ -1,7 +1,7 @@
-import HeaderPage from "../article/Header";
-import Footer from "../homePage/Footer";
-import Recommend from "../homePage/Recommend";
-import MovieBody from "./movieCard/MovieBody";
+import HeaderPage from "../Article/Header";
+import Footer from "../HomePage/Footer";
+import Recommend from "../HomePage/Recommend";
+import MovieBody from "./MovieCard/MovieBody";
 
 const MoviePage = () => {
   return (
