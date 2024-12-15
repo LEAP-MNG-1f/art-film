@@ -1,7 +1,7 @@
 import React from "react";
-import HeaderPage from "../../article/Header";
-import Footer from "../../homePage/Footer";
-import Recommend from "../../homePage/Recommend";
+import HeaderPage from "../../Article/Header";
+import Footer from "../../HomePage/Footer";
+import Recommend from "../../HomePage/Recommend";
 import { GiHumanTarget } from "react-icons/gi";
 import { LuClock5 } from "react-icons/lu";
 import { GiDramaMasks } from "react-icons/gi";

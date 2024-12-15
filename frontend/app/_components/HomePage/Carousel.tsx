@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import Header from "./MainHeader";
+import MainHeader from "./MainHeader";
 
 const Carousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -30,7 +30,7 @@ const Carousel = () => {
       <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
 
       <div className="relative z-10">
-        <Header />
+        <MainHeader />
         <div className="lg:pt-[188px] pt-12 pl-6">
           <div>
             <p className="text-white font-roboto-condensed text-[96px] font-extrabold leading-[100px]">

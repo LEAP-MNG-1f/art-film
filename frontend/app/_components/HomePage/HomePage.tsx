@@ -1,22 +1,22 @@
-import MovieCard from "../movie/movieCard/MovieCard";
-import ArticleCard from "../article/articleCard/ArticleCard";
+import MovieCard from "../Movie/MovieCard/MovieCard";
+import ArticleCard from "../Article/ArticleCard/ArticleCard";
 
-import DreamersDayCard from "../dreamersDay/dreamersDayCard/DreamersDayCard";
-import Footer from "./Footer";
+import DreamersDayCard from "../DreamersDay/DreamersDayCard/DreamersDayCard";
+
+import SingelPage from "../DreamersDay/SingleDreamersDay/SinglePage";
 import Carousel from "./Carousel";
-import SingelPage from "../dreamersDay/single-dreamersday/SinglePage";
+import Footer from "./Footer";
 
 const HomePage = () => {
   return (
     <div className="flex flex-col justify-center">
-      {/* <Carousel />
+      <Carousel />
       <div className="flex flex-col gap-12 ">
         <DreamersDayCard />
         <ArticleCard />
         <MovieCard />
       </div>
-      <Footer /> */}
-      <SingelPage />
+      <Footer />
     </div>
   );
 };

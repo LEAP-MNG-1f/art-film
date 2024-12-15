@@ -1,4 +1,4 @@
-import MoviePage from "../_components/movie/MoviePage";
+import MoviePage from "../_components/Movie/MoviePage";
 
 const Movie = () => {
   return (
