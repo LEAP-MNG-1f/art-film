@@ -74,31 +74,31 @@ const MovieBody = () => {
         <div className=" w-[240px] flex justify-center pt-[60px]">
           <div className="w-[224px] border border-l-[##3F3F3F] border-t-white border-b-white border-r-white flex flex-col gap-4 px-4">
             <p className="text-[20px] font-bold">Жанр</p>
-            <p className="h-8 border border-t-white border-b-[#3F3F3F]  border-r-white border-l-white ">
+            <p className="h-8 border border-t-white border-b-[##3F3F3F] hover:text-[#F8941E]  border-r-white border-l-white ">
               Бүгд
             </p>
-            <p className="h-8 border border-t-white border-b-[#3F3F3F]  border-r-white border-l-white ">
+            <p className="h-8 border border-t-white border-b-[##3F3F3F] hover:text-[#F8941E]  border-r-white border-l-white ">
               Драм
             </p>
-            <p className="h-8 border border-t-white border-black  border-r-white border-l-white ">
+            <p className="h-8 border border-t-white border-[##3F3F3F] hover:text-[#F8941E]  border-r-white border-l-white ">
               Инээдмийн
             </p>
-            <p className="h-8 border border-t-white border-black  border-r-white border-l-white ">
+            <p className="h-8 border border-t-white border-[##3F3F3F] hover:text-[#F8941E]  border-r-white border-l-white ">
               Баримтат
             </p>
-            <p className="h-8 border border-t-white border-black  border-r-white border-l-white ">
+            <p className="h-8 border border-t-white border-[##3F3F3F] hover:text-[#F8941E]  border-r-white border-l-white ">
               Богино хэмжээний
             </p>
-            <p className="h-8 border border-t-white border-black  border-r-white border-l-white ">
+            <p className="h-8 border border-t-white border-[##3F3F3F] hover:text-[#F8941E]  border-r-white border-l-white ">
               Романс
             </p>
-            <p className="h-8 border border-t-white border-black  border-r-white border-l-white ">
+            <p className="h-8 border border-t-white border-[##3F3F3F] hover:text-[#F8941E]  border-r-white border-l-white ">
               Авангард
             </p>
-            <p className="h-8 border border-t-white border-black  border-r-white border-l-white ">
+            <p className="h-8 border border-t-white border-[##3F3F3F] hover:text-[#F8941E]  border-r-white border-l-white ">
               Гэмт хэрэг
             </p>
-            <p className="h-8 border border-t-white border-black  border-r-white border-l-white ">
+            <p className="h-8 border border-t-white border-[##3F3F3F] hover:text-[#F8941E]  border-r-white border-l-white ">
               Түүхэн
             </p>
           </div>
