@@ -13,7 +13,6 @@ const Header = () => {
 
   return (
     <div className="pt-[37px] flex justify-center">
-     
       <header className="lg:w-[1040px] h-[44px] flex justify-between items-center lg:flex  lg:justify-between lg:items-center">
         <div className="flex lg:w-[520px] lg:gap-10 w-screen justify-between items-center ">
           <Link
@@ -95,5 +94,4 @@ const Header = () => {
   );
 };
 
-export default Header
-;
+export default Header;

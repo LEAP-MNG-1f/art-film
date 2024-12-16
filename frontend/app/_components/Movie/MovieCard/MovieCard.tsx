@@ -1,13 +1,35 @@
+import { ImdbStarIcon } from "@/public/Icons/Icons";
 import Link from "next/link";
 import React from "react";
-import { BsArrowRightShort } from "react-icons/bs";
 import { BsChevronRight } from "react-icons/bs";
 
-const MovieCard = () => {
+type Movie = {
+  _id: string;
+  title: string;
+  releaseYear: number;
+  genre: string[];
+  writer: string[];
+  director: string[];
+  rating: number;
+  trailerUrl?: string;
+  imageUrl: string;
+  relatedMovies: string[];
+  createdAt: Date;
+};
+
+const MovieCard = ({
+  moviesData,
+  isLoading,
+}: {
+  moviesData: Movie[];
+  isLoading: boolean;
+}) => {
+  const skeletonCards = Array.from({ length: 4 }, (_, i) => i); // Skeleton картын тоо
+
   return (
     <div className="flex justify-center pb-10 px-4 lg:px-0">
-      <div className="w-full lg:w-[1040px] flex flex-col gap-4">
-        <div className="flex justify-between h-[44px] lg:w-[1040px] ">
+      <div className="w-full lg:w-[1280px] flex flex-col gap-4">
+        <div className="flex justify-between h-[44px] lg:w-[1280px] ">
           <p className="text-black font-roboto-condensed text-[32px] flex items-center font-semibold leading-[24px]">
             КИНО
           </p>
@@ -22,100 +44,61 @@ const MovieCard = () => {
         </div>
 
         <div className="w-full">
-          <div className="overflow-x-auto lg:overflow-x-hidden">
-            <div className="flex lg:flex-col gap-6 lg:gap-4">
-              {[...Array(3)].map((_, index) => (
-                <div
-                  key={index}
-                  className="w-[869px] h-[222px] flex flex-col gap-4"
-                >
-                  <div className="flex gap-2 items-center mt-auto">
-                    <div className="w-8 h-8 rounded-full border border-black"></div>
-                    <div className="flex flex-col gap-2x">
-                      <p className="text-black font-roboto text-[13px] font-normal leading-[12px]">
-                        Boldoo Batbayar
-                      </p>
-                      <p className="text-[rgba(0,0,0,0.60)] text-[12px] font-normal leading-[12px]">
-                        3 өдрийн өмнө
-                      </p>
+          <div className="flex justify-between lg:gap-4 py-4">
+            {isLoading
+              ? skeletonCards.map((_, index) => (
+                  <div
+                    key={index}
+                    className="grid rounded-3xl w-[280px] shadow-md hover:shadow-lg duration-300 bg-gray-200 flex-col animate-pulse"
+                  >
+                    <div className="rounded-t-3xl h-[380px] bg-gray-300"></div>
+                    <div className="p-5">
+                      <div className="h-6 bg-gray-300 mb-2 rounded"></div>
+                      <div className="h-4 bg-gray-300 mb-2 rounded"></div>
+                      <div className="h-16 bg-gray-300 rounded"></div>
                     </div>
                   </div>
-                  <div className="flex gap-6">
+                ))
+              : moviesData.map((data) => (
+                  <div
+                    key={data._id}
+                    className="grid rounded-3xl max-w-[280px] shadow-md hover:shadow-lg duration-300 cursor-pointer bg-slate-100 flex-col"
+                  >
                     <img
-                      src="https://dx35vtwkllhj9.cloudfront.net/universalstudios/wicked/images/regions/us/share.jpg"
-                      alt=""
-                      className="w-[325px] h-[174px] rounded-lg object-cover"
+                      src={`${data?.imageUrl}`}
+                      width="360"
+                      height="200"
+                      className="rounded-t-3xl justify-center h-80 grid object-cover"
+                      alt={data.title}
                     />
-                    <div className="flex flex-col gap-6">
-                      <div className="flex flex-col gap-3">
-                        <div>
-                          <p className="text-black font-[Helvetica Neue] text-[24px] font-bold leading-[24px]">
-                            PersonaSilencehasnowings (1966)
-                          </p>
-                          <p className="text-[rgba(0,0,0,0.60)] font-[Helvetica Neue] text-[16px] font-bold leading-[24px]">
-                            Найруулагч: Казүо Куроки
-                          </p>
-                        </div>
-                        <p className="overflow-hidden text-[rgba(0, 0, 0, 0.80)] text-ellipsis font-[Roboto] text-[14px] font-normal leading-[18px]">
-                          Kaзүо Куроки найруулагч Японы баримтат кино урлагт
-                          дорвитой хувь нэмэр, өөрчлөлтийг авчирсан нэгэн билээ.
-                          "Silence has no wings" нь найруулагчийн анхны бүрэнf
-                          хэмжээний кино бөгөөд аль нэг жанрт харьяалахад тун
-                          хэцүү.
-                        </p>
+
+                    <div className="group p-5 grid z-10">
+                      <a className="group-hover:text-cyan-700 font-bold md:text-2xl line-clamp-2">
+                        {data?.title}
+                      </a>
+                      <span className="text-slate-400 pt-2 font-semibold">
+                        {data?.releaseYear}
+                      </span>
+                      <div className="h-20">
+                        <span className="line-clamp-3 py-2 h-20 leading-6 text-sm font-light">
+                          Ирээдүйд дэлхий хүн амьдрах боломжгүй болоход a
+                          тариачин, НАСА-гийн экс нисгэгч Жозеф Куперт үүрэг
+                          өгсөн судлаачдын багийн хамт сансрын хөлөг жолоодож,
+                          хүн төрөлхтөнд шинэ гараг олохын тулд.
+                        </span>
                       </div>
-
-                      <div className="flex gap-1 items-center mt-2">
-                        <p className="text-black font-[SF Pro Display] text-[15px] font-normal leading-[18px]">
-                          Цааш унших
-                        </p>
-
-                        <BsArrowRightShort className="w-[25px] h-[20px] pt-[2px]" />
+                      <div className="flex font-black items-center justify-between">
+                        <span className="text-yellow-500 text-xl">
+                          IMDB SCORE
+                        </span>
+                        <span className="text-3xl flex gap-x-1 items-center group-hover:text-yellow-600">
+                          {data?.rating}
+                          <ImdbStarIcon />
+                        </span>
                       </div>
                     </div>
                   </div>
-                </div>
-                // <div key={index} className="flex flex-col gap-3">
-                //   <div className="flex gap-2 items-center mt-auto">
-                //     <div className="w-8 h-8 rounded-full border border-black"></div>
-                //     <div className="flex flex-col  text-sm text-gray-700">
-                //       <div>Boldoo Batbayar</div>
-                //       <div> 2024.10.29</div>
-                //     </div>
-                //   </div>
-
-                //   <div className="flex flex-col lg:flex-row gap-[13px] rounded-lg hover:shadow-lg  w-[336px] lg:w-[1040px]">
-                //     <img
-                //       src="https://dx35vtwkllhj9.cloudfront.net/universalstudios/wicked/images/regions/us/share.jpg"
-                //       alt=""
-                //       className="w-[325px] h-[174px] rounded-lg object-cover"
-                //     />
-                //     <div>
-                //       <div>
-
-                //         <p className="text-[20px] font-bold mb-2">
-                //           PersonaSilencehasnowings (1966)
-                //         </p>
-                //         <p className="text-black/60 font-bold">
-                //           Найруулагч: Казүо Куроки
-                //         </p>
-                //       </div>
-                //       <p className="text-[14px] font-bold">
-                //         Kaзүо Куроки найруулагч Японы баримтат кино урлагт
-                //         дорвитой хувь нэмэр, өөрчлөлтийг авчирсан нэгэн билээ.
-                //         "Silence has no wings" нь найруулагчийн анхны бүрэнf
-                //         хэмжээний кино бөгөөд аль нэг жанрт харьяалахад тун
-                //         хэцүү.
-                //       </p>
-                //       <div className="flex gap-1 items-center mt-2">
-                //         <p>Цааш унших</p>
-                //         <BsArrowRightShort className="w-[25px] h-[20px] pt-[2px]" />
-                //       </div>
-                //     </div>
-                //   </div>
-                // </div>
-              ))}
-            </div>
+                ))}
           </div>
         </div>
       </div>
