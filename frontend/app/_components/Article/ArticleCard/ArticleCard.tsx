@@ -25,7 +25,7 @@ function ArticleCard() {
               {[...Array(3)].map((_, index) => (
                 <div
                   key={index}
-                  className="flex flex-col gap-[13px] rounded-lg hover:shadow-lg h-[404px]   w-[336px] lg:w-[337px]"
+                  className="flex flex-col gap-[13px] rounded-lg hover:shadow-lg h-auto   w-[336px] lg:w-[337px]"
                 >
                   <img
                     src="https://dx35vtwkllhj9.cloudfront.net/universalstudios/wicked/images/regions/us/share.jpg"
@@ -43,7 +43,7 @@ function ArticleCard() {
                       <p className="overflow-hidden text-[rgba(0,0,0,0.85)] text-ellipsis  font-roboto text-[14px] font-normal leading-[140%] ">
                         Lorem ipsum dolor sit amet consectetur. Est tincidunt
                         ornare orci sed pretium habitant lacus. Vulputate sem
-                        turpis est amet porttitor volutpat vitae quam. 
+                        turpis est amet porttitor volutpat vitae quam.
                       </p>
                     </div>
                     <div className="flex gap-2 items-center mt-auto">
