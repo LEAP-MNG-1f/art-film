@@ -20,9 +20,11 @@ type Movie = {
 const MovieCard = ({
   moviesData,
   isLoading,
+  limit = moviesData.length, // Default is to show all movies
 }: {
   moviesData: Movie[];
   isLoading: boolean;
+  limit?: number; // Add limit prop to control how many items to show
 }) => {
   const skeletonCards = Array.from({ length: 4 }, (_, i) => i); // Skeleton картын тоо
 
@@ -44,7 +46,7 @@ const MovieCard = ({
         </div>
 
         <div className="w-full">
-          <div className="flex justify-between lg:gap-4 py-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 py-4">
             {isLoading
               ? skeletonCards.map((_, index) => (
                   <div
@@ -59,7 +61,7 @@ const MovieCard = ({
                     </div>
                   </div>
                 ))
-              : moviesData.map((data) => (
+              : moviesData.slice(0, limit).map((data) => (
                   <div
                     key={data._id}
                     className="grid rounded-3xl max-w-[280px] shadow-md hover:shadow-lg duration-300 cursor-pointer bg-slate-100 flex-col"
@@ -73,7 +75,7 @@ const MovieCard = ({
                     />
 
                     <div className="group p-5 grid z-10">
-                      <a className="group-hover:text-cyan-700 font-bold md:text-2xl line-clamp-2">
+                      <a className="group-hover:text-cyan-700 font-bold md:text-2xl line-clamp-2 duration-300">
                         {data?.title}
                       </a>
                       <span className="text-slate-400 pt-2 font-semibold">
@@ -91,7 +93,7 @@ const MovieCard = ({
                         <span className="text-yellow-500 text-xl">
                           IMDB SCORE
                         </span>
-                        <span className="text-3xl flex gap-x-1 items-center group-hover:text-yellow-600">
+                        <span className="text-3xl flex gap-x-1 items-center group-hover:text-yellow-600 duration-300">
                           {data?.rating}
                           <ImdbStarIcon />
                         </span>

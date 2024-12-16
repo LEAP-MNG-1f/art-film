@@ -1,7 +1,7 @@
 "use client";
-import { useState } from "react";
 import { SearchIcon } from "@/public/Icons/SvgFiles";
 import { MovieCreate } from "./MovieCreate";
+import { useState } from "react";
 
 export const MoviesHeader = () => {
   // Step 1: State for managing the modal visibility
@@ -42,7 +42,8 @@ export const MoviesHeader = () => {
             >
               &times;
             </button>
-            <MovieCreate />
+            {/* Pass handleModalClose as closeDialog */}
+            <MovieCreate closeDialog={handleModalClose} />
           </div>
         </div>
       )}
