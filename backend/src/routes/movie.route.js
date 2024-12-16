@@ -1,5 +1,8 @@
 import express from "express";
-import { validateMovie } from "../middleware/validation.middleware.js";
+import {
+  validateMovie,
+  validateObjectId,
+} from "../middleware/validation.middleware.js";
 import {
   getMovies,
   createMovie,
@@ -13,8 +16,8 @@ const movieRouter = express.Router();
 movieRouter.route("/").get(getMovies).post(validateMovie, createMovie);
 movieRouter
   .route("/:id")
-  .get(getMovieById)
-  .put(validateMovie, updateMovie)
-  .delete(deleteMovie);
+  .get(getMovieById, validateObjectId)
+  .put(validateMovie, updateMovie, validateObjectId)
+  .delete(deleteMovie, validateObjectId);
 
 export default movieRouter;
