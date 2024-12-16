@@ -1,9 +1,6 @@
 import MovieCard from "../Movie/MovieCard/MovieCard";
 import ArticleCard from "../Article/ArticleCard/ArticleCard";
-
 import DreamersDayCard from "../DreamersDay/DreamersDayCard/DreamersDayCard";
-
-import SingelPage from "../DreamersDay/SingleDreamersDay/SinglePage";
 import Carousel from "./Carousel";
 import Footer from "./Footer";
 
