@@ -1,5 +1,6 @@
 import Movie from "../models/movie.model.js";
 import catchAsync from "../utils/catchAsync.js";
+import mongoose from "mongoose";
 
 export const getMovies = catchAsync(async (req, res) => {
   const {
@@ -24,10 +25,21 @@ export const getMovies = catchAsync(async (req, res) => {
 
 export const getMovieById = catchAsync(async (req, res) => {
   const { id } = req.params;
-  const movie = await Movie.findById(id);
-  if (!movie) {
-    return res.status(404).json({ success: false, message: "Кино олдсонгүй" });
+
+  // Check if the ID is a valid ObjectId
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res
+      .status(400)
+      .json({ success: false, message: "Invalid movie ID" });
   }
+
+  // Query the movie by its ObjectId
+  const movie = await Movie.findById(id);
+
+  if (!movie) {
+    return res.status(404).json({ success: false, message: "Movie not found" });
+  }
+
   res.status(200).json({ success: true, data: movie });
 });
 
