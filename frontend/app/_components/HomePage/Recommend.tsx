@@ -17,7 +17,7 @@ const Recommend = () => {
               {[...Array(3)].map((_, index) => (
                 <div
                   key={index}
-                  className="flex flex-col gap-[13px] rounded-lg hover:shadow-lg h-[404px] w-[336px] lg:w-[337px]"
+                  className="flex flex-col gap-[13px] rounded-lg hover:shadow-lg h-[404px]  w-[336px] lg:w-[337px]"
                 >
                   <img
                     src="https://dx35vtwkllhj9.cloudfront.net/universalstudios/wicked/images/regions/us/share.jpg"
