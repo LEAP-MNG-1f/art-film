@@ -7,7 +7,7 @@ const Recommend = () => {
         <div className="flex justify-between items-center h-[44px] ">
           <p className="text-[#000] text-center font-roboto text-[18px] font-semibold leading-[32px] flex items-center gap-2">
             <FaFireFlameCurved />
-            Таньд санал болгох
+            Таньд санал болгох.
           </p>
         </div>
 
