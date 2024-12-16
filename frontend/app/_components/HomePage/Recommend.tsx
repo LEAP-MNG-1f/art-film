@@ -7,17 +7,17 @@ const Recommend = () => {
         <div className="flex justify-between items-center h-[44px] ">
           <p className="text-[#000] text-center font-roboto text-[18px] font-semibold leading-[32px] flex items-center gap-2">
             <FaFireFlameCurved />
-            Таньд санал болгох
+            Таньд санал болгох.
           </p>
         </div>
 
         <div className="w-full">
-          <div className="overflow-x-auto">
+          <div className="overflow-x-auto ">
             <div className="flex gap-6 lg:gap-4">
               {[...Array(3)].map((_, index) => (
                 <div
                   key={index}
-                  className="flex flex-col gap-[13px] rounded-lg hover:shadow-lg h-[404px]   w-[336px] lg:w-[337px]"
+                  className="flex flex-col gap-[13px] rounded-lg hover:shadow-lg h-[404px]  w-[336px] lg:w-[337px]"
                 >
                   <img
                     src="https://dx35vtwkllhj9.cloudfront.net/universalstudios/wicked/images/regions/us/share.jpg"
