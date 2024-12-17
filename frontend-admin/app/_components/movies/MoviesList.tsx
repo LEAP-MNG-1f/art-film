@@ -11,7 +11,7 @@ const MoviesList = ({
   handleDelete: (id: string) => void;
 }) => {
   return (
-    <div className="bg-white shadow-xl rounded-2xl overflow-hidden">
+    <div className="bg-white shadow-xl container mx-auto mt-[200px] rounded-2xl overflow-hidden">
       <div className="p-6 bg-orange-400">
         <h2 className="text-2xl font-bold text-white text-center">
           Кино Жагсаалт
