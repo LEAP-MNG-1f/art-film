@@ -44,7 +44,7 @@ const MoviePage = () => {
 
   return (
     <div className="flex justify-center">
-      <div className="max-w-[1220px]">
+      <div>
         <HeaderPage />
         <div className="pt-12">
           <MovieCard moviesData={moviesData} isLoading={isLoading} />

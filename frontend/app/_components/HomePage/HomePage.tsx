@@ -46,7 +46,7 @@ const HomePage = () => {
     fetchDataArticles();
   }, []);
   return (
-    <div className="flex flex-col justify-center">
+    <div className="w-full h-auto flex flex-col justify-center items-center">
       <Carousel />
       <DreamersDayCard />
       <div className="pt-80 flex flex-col gap-10">

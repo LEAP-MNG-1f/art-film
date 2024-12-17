@@ -20,7 +20,7 @@ const Carousel = () => {
   }, [slides.length]);
 
   return (
-    <div className="relative h-[900px]  w-screen overflow-hidden flex justify-center pt-[37px]">
+    <div className="relative h-[900px] w-screen overflow-hidden flex justify-center">
       <div className="absolute inset-0">
         {slides.map((slide, index) => (
           <div
@@ -32,12 +32,10 @@ const Carousel = () => {
           ></div>
         ))}
       </div>
-
-      <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
-
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent "></div>
       <div className="relative z-10">
         <MainHeader />
-        <div className="pt-[258px]  pl-6">
+        <div className="pt-[258px] pl-6">
           <div>
             <p className="text-white font-roboto-condensed text-[96px] font-extrabold leading-[100px]">
               ONLY RIVER

@@ -1,12 +1,11 @@
 "use client";
-
 import Link from "next/link";
 
-const MainHeader = () => {
+const Header = () => {
   return (
-    <header className=" flex justify-center pt-[37px]">
-      <div className="w-[1221px] h-[44px] flex justify-between">
-        <div className="flex   items-center">
+    <header className="flex justify-center items-center py-[32px]">
+      <div className="w-[1180px] h-[44px] flex gap-[320px]">
+        <div className="flex items-center">
           <Link href="./">
             <img
               src="/Icons/ArtfilmLogo.png"
@@ -15,7 +14,7 @@ const MainHeader = () => {
             />
           </Link>
         </div>
-        <nav className="flex gap-[32px] ]">
+        <nav className="flex justify-center items-center gap-[32px]">
           <Link
             href="/dreamers-day"
             className="text-black font-roboto text-[16px] font-semibold leading-normal hover:text-[#F8941E]"
@@ -35,11 +34,9 @@ const MainHeader = () => {
             Нийтлэл
           </Link>
         </nav>
-
-        <div className="w-11 h-11 rounded-[50%] border border-black"></div>
       </div>
     </header>
   );
 };
 
-export default MainHeader;
+export default Header;

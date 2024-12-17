@@ -19,13 +19,12 @@ const ArticleBody = ({
   const skeletonCards = new Array(6).fill(null);
 
   return (
-    <div className="flex justify-center px-4 lg:px-0 py-10">
-      <div className="w-full lg:w-[1040px] flex flex-col gap-4">
-        <div className="flex justify-between items-center h-[44px] ">
+    <div className="flex justify-center px-4 lg:px-0">
+      <div className="max-w-[1180px] flex flex-col gap-4">
+        <div className="flex justify-between items-center h-[44px]">
           <p className="font-bold text-[32px]">Бүх нийтлэл</p>
         </div>
-
-        <div className="w-full">
+        <div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {isLoading
               ? skeletonCards.map((_, index) => (
@@ -39,7 +38,7 @@ const ArticleBody = ({
               : articlesData.slice(0, limit).map((data) => (
                   <div
                     key={data?._id}
-                    className="flex flex-col gap-[16px] rounded-lg p-4 border border-[#E8E8EA] h-auto w-full"
+                    className="flex flex-col gap-4 rounded-lg p-4 border border-[#E8E8EA] h-auto w-full"
                   >
                     <img
                       src={data?.imageUrl}
@@ -48,7 +47,6 @@ const ArticleBody = ({
                       alt=""
                       className="w-full h-[240px] rounded-lg object-cover"
                     />
-
                     <Link
                       href={`/articles/${data?._id}`}
                       className="group p-5 grid z-10"
@@ -63,10 +61,6 @@ const ArticleBody = ({
                           </p>
                         </div>
                         <div className="flex gap-2 items-center mt-auto">
-                          <div className="w-7 h-7 rounded-full border border-black"></div>
-                          <p className="text-black font-roboto text-[12px] font-normal leading-[140%]">
-                            Boldoo Batbayar
-                          </p>
                           <p className="text-[rgba(0,0,0,0.45)] font-roboto text-[14px] font-normal leading-[140%]">
                             2 өдрийн өмнө
                           </p>
@@ -78,9 +72,9 @@ const ArticleBody = ({
           </div>
         </div>
       </div>
-      <div className="text-end">
+      {/* <div className="text-end">
         <p>ЦААШ ХАРАХ </p>
-      </div>
+      </div> */}
     </div>
   );
 };

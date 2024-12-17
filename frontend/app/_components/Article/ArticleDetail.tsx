@@ -1,6 +1,6 @@
 import Footer from "../HomePage/Footer";
 import React from "react";
-import DreamersDayHeader from "../DreamersDay/DreamersDayHeader";
+import Header from "./Header";
 type Article = {
   _id: string;
   title: string;
@@ -13,14 +13,14 @@ const ArticleDetail = ({ articleData }: { articleData: Article | null }) => {
   }
 
   return (
-    <div className="movie-detail-container flex flex-col justify-center">
-      <DreamersDayHeader />
-      <div className="flex  items-center flex-col">
-        <div className="w-[1180px] ">
-          <p className="text-black text-center font-['Helvetica Neue'] text-4xl font-bold leading-[42px]">
+    <div className="flex flex-col justify-center">
+      <Header />
+      <div className="max-w-[1180px] flex items-center flex-col">
+        <div className="max-w-[1180px]">
+          <p className="text-black text-center font-['Helvetica Neue'] text-4xl font-bold leading-[42px] pb-[32px]">
             БОЛДООГИЙН САНАЛ БОЛГОХ ШИЛДЭГ 15-Н КИНО
           </p>
-          <div className="p-8 border border-t-[#00000073] border-r-white border-l-white border-b-white flex flex-col gap-8 ">
+          <div className="p-8 border border-t-[#6B6B6B] border-r-white border-l-white border-b-white flex flex-col gap-8">
             <p>
               “Хүрд” кино нь амиа хорлосон хүмүүсийн ар гэрийнхэн болон амиа
               хорлохоор оролдож байсан хүмүүстэй хийсэн ярианаас бүтжээ. Гэр
@@ -33,7 +33,7 @@ const ArticleDetail = ({ articleData }: { articleData: Article | null }) => {
               <img
                 src={articleData.imageUrl}
                 alt={articleData.title || "Movie Poster"}
-                className="movie-poster"
+                className="movie-poster border rounded-xl"
               />
             )}
             <p>
@@ -73,7 +73,7 @@ const ArticleDetail = ({ articleData }: { articleData: Article | null }) => {
               <img
                 src={articleData.imageUrl}
                 alt={articleData.title || "Movie Poster"}
-                className="movie-poster"
+                className="movie-poster border rounded-xl"
               />
             )}
             <div className="flex flex-col gap-4">
