@@ -12,7 +12,7 @@ const MoviesList = ({
 }) => {
   return (
     <div className="bg-white shadow-xl rounded-2xl overflow-hidden">
-      <div className="p-6 bg-gradient-to-r from-indigo-600 to-purple-600">
+      <div className="p-6 bg-orange-400">
         <h2 className="text-2xl font-bold text-white text-center">
           Кино Жагсаалт
         </h2>
@@ -46,7 +46,7 @@ const MoviesList = ({
             {movieData.map((movie) => (
               <tr
                 key={movie._id}
-                className="hover:bg-gray-50 transition-colors duration-200"
+                className="hover:bg-orange-100 transition-colors duration-200"
               >
                 <td className="px-6 py-4">
                   <img
@@ -93,7 +93,7 @@ const MoviesList = ({
                     <span className="text-gray-400">Байхгүй</span>
                   )}
                 </td>
-                <td className="flex px-6 py-4">
+                <td className="px-6 py-14 flex gap-3">
                   <button
                     onClick={() => handleEdit(movie)}
                     className="text-indigo-600 hover:text-indigo-800 p-2 rounded-full hover:bg-indigo-50 transition-all"
