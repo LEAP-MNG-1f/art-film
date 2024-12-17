@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 
-const MainHeader = () => {
+const DreamersDayHeader = () => {
   return (
     <header className=" flex justify-center pt-[37px]">
       <div className="w-[1221px] h-[44px] flex justify-between">
@@ -42,4 +42,4 @@ const MainHeader = () => {
   );
 };
 
-export default MainHeader;
+export default DreamersDayHeader;
