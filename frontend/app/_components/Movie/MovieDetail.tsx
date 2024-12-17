@@ -1,8 +1,8 @@
 import React from "react";
-import DreamersDayHeader from "../DreamersDay/DreamersDayHeader";
 import Footer from "../HomePage/Footer";
 import { FaStar } from "react-icons/fa";
 import { HiOutlineArrowTrendingUp } from "react-icons/hi2";
+import Header from "../Article/Header";
 
 type Movie = {
   _id: string;
@@ -25,7 +25,7 @@ const MovieDetail = ({ movieData }: { movieData: Movie | null }) => {
 
   return (
     <div className="movie-detail-container flex flex-col justify-center">
-      <DreamersDayHeader />
+      <Header />
       <div className="flex  items-center flex-col">
         <div className="w-[1180px] ">
           <div className="flex flex-col gap-2 pt-10">

@@ -1,9 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
 import Footer from "../HomePage/Footer";
-
-import ArticleBody from "./ArticleCard/ArticleBody";
 import Header from "./Header";
+import ArticleCard from "./ArticleCard/ArticleCard";
 
 const ArticlePage = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -26,12 +25,13 @@ const ArticlePage = () => {
   useEffect(() => {
     fetchDataArticles();
   }, []);
+
   return (
     <div className="flex justify-center">
-      <div className="">
+      <div>
         <Header />
-        <div className="py-10">
-          <ArticleBody
+        <div className="flex justify-center items-center py-10">
+          <ArticleCard
             articlesData={articleData}
             isLoading={isLoading}
             limit={6}

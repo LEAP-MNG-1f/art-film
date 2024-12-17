@@ -1,29 +1,33 @@
 import React from "react";
-import HeaderPage from "../../Article/Header";
-import Footer from "../../HomePage/Footer";
-import Recommend from "../../HomePage/Recommend";
-import { GiHumanTarget } from "react-icons/gi";
-import { LuClock5 } from "react-icons/lu";
-import { GiDramaMasks } from "react-icons/gi";
-import { IoLocationSharp } from "react-icons/io5";
-import { IoLanguage } from "react-icons/io5";
-import { SlNote } from "react-icons/sl";
+import {
+  ActorIcon,
+  CategoriesIcon,
+  ClockIcon,
+  LanguageIcon,
+  LocationIcon,
+  NodeIcon,
+  TickedIcon,
+} from "@/public/Icons/Icons";
 
-const SingelPage = () => {
+const DreamersDayBody = () => {
   return (
     <div className="flex justify-center">
-      <div className="w-[1221px] py-10">
+      <div className="w-[1180px] flex flex-col gap-10">
+        <div className="flex justify-center items-center">
+          <h1 className="text-[32px] font-bold">DREAMERS' DAY</h1>
+        </div>
         <img
-          className="w-[1221px] h-[570px] rounded-lg"
+          className="w-[1180px] h-[570px] rounded-lg"
           src="https://images.hdqwalls.com/wallpapers/godzilla-minus-one-4k-d9.jpg"
           alt=""
         />
-        <div className="flex flex-col gap-3 pt-10">
-          <div className="w-[894px]">
-            <div className="flex items-center gap-4">
+        <div className="flex flex-col gap-3">
+          <div className="w-[894px] flex flex-col gap-3">
+            <div className="flex justify-center items-center gap-3">
               <p className="text-black font-['Helvetica_Neue'] text-[32px] font-medium leading-[32px]">
                 Dreamers’ day #396: Oldboy Special Screening
               </p>
+              <div className="border-r-2 border-black h-[23px]"></div>
               <p className="text-black font-roboto text-[22px] font-normal leading-[20px]  ">
                 2024.11.24 17:00
               </p>
@@ -38,8 +42,7 @@ const SingelPage = () => {
             </div>
             <div className="flex gap-2 flex-col">
               <div className="flex items-center gap-2">
-                <GiHumanTarget className="w-5 h-5" />
-
+                <ActorIcon />
                 <p className="text-black font-roboto text-[16px] font-semibold leading-[28px]">
                   Найруулагч:
                 </p>
@@ -48,8 +51,7 @@ const SingelPage = () => {
                 </p>
               </div>
               <div className="flex items-center gap-2">
-                <LuClock5 className="w-5 h-5" />
-
+                <ClockIcon />
                 <p className="text-black font-roboto text-[16px] font-semibold leading-[28px]">
                   Үргэлжлэх хугацаа:
                 </p>
@@ -58,8 +60,7 @@ const SingelPage = () => {
                 </p>
               </div>
               <div className="flex items-center gap-2">
-                <GiDramaMasks className="w-5 h-5" />
-
+                <CategoriesIcon />
                 <p className="text-black font-roboto text-[16px] font-semibold leading-[28px]">
                   Жанр:
                 </p>
@@ -68,8 +69,7 @@ const SingelPage = () => {
                 </p>
               </div>
               <div className="flex items-center gap-2">
-                <IoLanguage className="w-5 h-5" />
-
+                <LanguageIcon />
                 <p className="text-black font-roboto text-[16px] font-semibold leading-[28px]">
                   Хэл:
                 </p>
@@ -78,8 +78,7 @@ const SingelPage = () => {
                 </p>
               </div>
               <div className="flex items-center gap-2">
-                <SlNote className="w-5 h-5" />
-
+                <NodeIcon />
                 <p className="text-black font-roboto text-[16px] font-semibold leading-[28px]">
                   Хадмал:
                 </p>
@@ -88,8 +87,7 @@ const SingelPage = () => {
                 </p>
               </div>
               <div className="flex items-center gap-2">
-                <IoLocationSharp className="w-5 h-5" />
-
+                <LocationIcon />
                 <p className="text-black font-roboto text-[16px] font-semibold leading-[28px]">
                   Байршил:
                 </p>
@@ -103,13 +101,14 @@ const SingelPage = () => {
             </div>
           </div>
           <div className="flex justify-between">
-            <div>
-              <div className="flex items-center">
+            <div className="flex justify-center items-center">
+              <div className="flex items-center gap-2">
+                <TickedIcon />
                 <p className="text-black font-roboto text-[24px] font-semibold leading-[28px]">
                   Тасалбарын үнэ:
                 </p>
                 <p className="text-black font-roboto text-[24px] font-normal leading-[28px] ">
-                  232222
+                  11'000₮
                 </p>
               </div>
             </div>
@@ -123,4 +122,4 @@ const SingelPage = () => {
   );
 };
 
-export default SingelPage;
+export default DreamersDayBody;

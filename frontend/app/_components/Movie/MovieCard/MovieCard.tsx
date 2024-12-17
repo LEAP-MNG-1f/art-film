@@ -30,8 +30,8 @@ const MovieCard = ({
 
   return (
     <div className="flex justify-center pb-10 px-4 lg:px-0">
-      <div className="w-full lg:w-[1280px] flex flex-col gap-4">
-        <div className="flex justify-between h-[44px] lg:w-[1280px] ">
+      <div className="max-w-[1180px] lg:w-[1180px] flex flex-col gap-4">
+        <div className="flex justify-between h-[44px] w-full">
           <p className="text-black font-roboto-condensed text-[32px] flex items-center font-semibold leading-[24px]">
             КИНО
           </p>
@@ -44,8 +44,8 @@ const MovieCard = ({
             </div>
           </Link>
         </div>
-        <div className="w-full">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 py-4">
+        <div className="max-w-[1180px]">
+          <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 py-4">
             {isLoading
               ? skeletonCards.map((_, index) => (
                   <div
@@ -63,7 +63,7 @@ const MovieCard = ({
               : moviesData.slice(0, limit).map((data) => (
                   <div
                     key={data._id}
-                    className="grid rounded-xl max-w-[394px] shadow-md hover:shadow-lg duration-300 cursor-pointer bg-slate-100 flex-col"
+                    className="grid rounded-xl shadow-md hover:shadow-lg duration-300 cursor-pointer bg-slate-100 flex-col"
                   >
                     <img
                       src={`${data?.imageUrl}`}

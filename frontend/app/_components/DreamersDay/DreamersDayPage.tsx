@@ -1,15 +1,14 @@
+import Header from "../Article/Header";
 import Footer from "../HomePage/Footer";
-import DreamersBody from "./DreamersDayCard/DreamersBody";
+import DreamersDayBody from "./DreamersDayCard/DreamersDayBody";
 import VerySoon from "./DreamersDayCard/VerySoon";
-
-import DreamersDayHeader from "./DreamersDayHeader";
 
 const DreamersDayPage = () => {
   return (
     <div className="flex justify-center">
-      <div>
-        <DreamersDayHeader />
-        <DreamersBody />
+      <div className="flex flex-col gap-10">
+        <Header />
+        <DreamersDayBody />
         <VerySoon />
         <Footer />
       </div>
