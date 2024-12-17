@@ -1,6 +1,23 @@
 import React from "react";
+import Link from "next/link";
 
-const ArticleBody = () => {
+type Article = {
+  _id: string;
+  title: string;
+  imageUrl: string;
+};
+
+const ArticleBody = ({
+  articlesData,
+  isLoading,
+  limit = articlesData.length,
+}: {
+  articlesData: Article[];
+  isLoading: boolean;
+  limit?: number;
+}) => {
+  const skeletonCards = new Array(6).fill(null);
+
   return (
     <div className="flex justify-center px-4 lg:px-0 py-10">
       <div className="w-full lg:w-[1040px] flex flex-col gap-4">
@@ -9,45 +26,60 @@ const ArticleBody = () => {
         </div>
 
         <div className="w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
-            {[...Array(6)].map((_, index) => (
-              <div
-                key={index}
-                className="flex flex-col gap-[13px] rounded-lg hover:shadow-lg h-[404px]   w-[336px] lg:w-[337px]"
-              >
-                <img
-                  src="https://dx35vtwkllhj9.cloudfront.net/universalstudios/wicked/images/regions/us/share.jpg"
-                  alt=""
-                  className="w-full h-[183px] rounded-lg object-cover"
-                />
-                <div className="p-4 gap-2 flex flex-col">
-                  <p className="text-[rgba(0,0,0,0.45)] font-roboto text-[14px] font-normal leading-[140%]">
-                    2 өдрийн өмнө
-                  </p>
-                  <div>
-                    <p className="text-black font-helvetica text-[18px] font-bold leading-[133.333%]">
-                      БОЛДООГИЙН.САНАЛ.БОЛ ГОХ ШИЛДЭГ 15-Н КИНО
-                    </p>
-                    <p className="overflow-hidden text-[rgba(0,0,0,0.85)] text-ellipsis font-roboto text-[14px] font-normal leading-[140%] ">
-                      Lorem ipsum dolor sit amet consectetur. Est tincidunt
-                      ornare orci sed pretium habitant lacus. Vulputate sem
-                      turpis est amet porttitor volutpat vitae quam.
-                    </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {isLoading
+              ? skeletonCards.map((_, index) => (
+                  <div
+                    key={index}
+                    className="flex flex-col gap-[16px] rounded-lg p-4 border border-[#E8E8EA] h-auto w-full"
+                  >
+                    <div className="w-full h-[240px] bg-gray-300 rounded-lg"></div>
                   </div>
-                  <div className="flex gap-2 items-center mt-auto">
-                    <div className="w-7 h-7 rounded-full border border-black"></div>
-                    <p className="text-black font-roboto text-[12px] font-normal leading-[140%]">
-                      Boldoo Batbayar
-                    </p>
+                ))
+              : articlesData.slice(0, limit).map((data) => (
+                  <div
+                    key={data?._id}
+                    className="flex flex-col gap-[16px] rounded-lg p-4 border border-[#E8E8EA] h-auto w-full"
+                  >
+                    <img
+                      src={data?.imageUrl}
+                      width="360"
+                      height="200"
+                      alt=""
+                      className="w-full h-[240px] rounded-lg object-cover"
+                    />
+
+                    <Link
+                      href={`/articles/${data?._id}`}
+                      className="group p-5 grid z-10"
+                    >
+                      <div className="flex flex-col gap-5">
+                        <div className="flex flex-col gap-4">
+                          <div className="w-[73px] h-[28px] bg-[#F8941E0D] rounded-md flex items-center justify-center text-[#F8941E] font-['Helvetica Neue'] text-[14px] font-bold leading-[20px]">
+                            Онцлох
+                          </div>
+                          <p className="text-[#181A2A] font-['Helvetica Neue'] text-[24px] font-bold leading-[28px]">
+                            {data?.title}
+                          </p>
+                        </div>
+                        <div className="flex gap-2 items-center mt-auto">
+                          <div className="w-7 h-7 rounded-full border border-black"></div>
+                          <p className="text-black font-roboto text-[12px] font-normal leading-[140%]">
+                            Boldoo Batbayar
+                          </p>
+                          <p className="text-[rgba(0,0,0,0.45)] font-roboto text-[14px] font-normal leading-[140%]">
+                            2 өдрийн өмнө
+                          </p>
+                        </div>
+                      </div>
+                    </Link>
                   </div>
-                </div>
-              </div>
-            ))}
+                ))}
           </div>
         </div>
-        <div className="text-end">
-          <p>ЦААШ ХАРАХ </p>
-        </div>
+      </div>
+      <div className="text-end">
+        <p>ЦААШ ХАРАХ </p>
       </div>
     </div>
   );
