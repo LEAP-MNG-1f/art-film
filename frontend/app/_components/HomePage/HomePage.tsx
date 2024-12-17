@@ -50,15 +50,11 @@ const HomePage = () => {
       <Carousel />
       <DreamersDayCard />
       <div className="pt-80 flex flex-col gap-10">
-<<<<<<< Updated upstream
         <ArticleCard
           articlesData={articleData}
           isLoading={isLoading}
           limit={3}
         />
-=======
-        <ArticleCard />
->>>>>>> Stashed changes
         <MovieCard moviesData={moviesData} isLoading={isLoading} limit={4} />
       </div>
       <Footer />
