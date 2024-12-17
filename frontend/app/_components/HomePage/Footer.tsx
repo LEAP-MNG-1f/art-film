@@ -4,7 +4,7 @@ import { RiMapPin2Line } from "react-icons/ri";
 const Footer = () => {
   return (
     <div className="flex justify-center pt-24 w-screen bg-black">
-      <div className="lg:w-[1040px] lg:pb-10 px-2">
+      <div className="lg:w-[1221px] lg:pb-10 px-2">
         <div className="flex justify-between">
           <div className="hidden lg:block">
             <img

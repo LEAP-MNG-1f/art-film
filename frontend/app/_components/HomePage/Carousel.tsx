@@ -20,8 +20,7 @@ const Carousel = () => {
   }, [slides.length]);
 
   return (
-    <div className="relative lg:h-[900px] h-[300px] w-screen overflow-hidden flex justify-center lg:pt-[37px]">
-      {/* Images */}
+    <div className="relative h-[900px]  w-screen overflow-hidden flex justify-center pt-[37px]">
       <div className="absolute inset-0">
         {slides.map((slide, index) => (
           <div
@@ -34,13 +33,11 @@ const Carousel = () => {
         ))}
       </div>
 
-      {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
 
-      {/* Content */}
       <div className="relative z-10">
         <MainHeader />
-        <div className="lg:pt-[188px] pt-12 pl-6">
+        <div className="pt-[258px]  pl-6">
           <div>
             <p className="text-white font-roboto-condensed text-[96px] font-extrabold leading-[100px]">
               ONLY RIVER
@@ -49,7 +46,7 @@ const Carousel = () => {
               THE FLOWS
             </p>
           </div>
-          <div className="lg:w-[147px] lg:h-[49px] w-[117px] h-[39px] backdrop-blur-sm text-white rounded-md flex items-center justify-center font-bold">
+          <div className="w-[147px] h-[49px]  backdrop-blur-sm text-white rounded-md flex items-center justify-center font-bold">
             Дэлгэрэнгүй
           </div>
         </div>
