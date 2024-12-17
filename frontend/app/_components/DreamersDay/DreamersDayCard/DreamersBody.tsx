@@ -13,9 +13,6 @@ const SingelPage = () => {
   return (
     <div className="flex justify-center">
       <div className="w-[1221px] py-10">
-        <p className="text-[#000] font-['Roboto_Condensed'] text-[32px] font-semibold leading-[24px] pb-10 flex justify-center">
-          DREAMERS’ DAY
-        </p>
         <img
           className="w-[1221px] h-[570px] rounded-lg"
           src="https://images.hdqwalls.com/wallpapers/godzilla-minus-one-4k-d9.jpg"
