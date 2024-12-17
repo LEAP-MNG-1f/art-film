@@ -33,6 +33,15 @@ export const getMovieById = catchAsync(async (req, res) => {
 
 export const createMovie = catchAsync(async (req, res) => {
   const movieData = req.body;
+
+  // Validation хийх боломжтой
+  if (!movieData.title || !movieData.releaseYear) {
+    return res.status(400).json({
+      success: false,
+      message: "Киноны нэр болон гарсан оныг заавал оруулах шаардлагатай!",
+    });
+  }
+
   const newMovie = await Movie.create(movieData);
   res.status(201).json({ success: true, data: newMovie });
 });

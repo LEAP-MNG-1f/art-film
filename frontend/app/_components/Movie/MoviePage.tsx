@@ -47,6 +47,7 @@ const MoviePage = () => {
       <div>
         <HeaderPage />
         <div className="py-10">
+          {/* No limit prop passed here, so all movies will be shown */}
           <MovieCard moviesData={moviesData} isLoading={isLoading} />
           <Recommend />
         </div>

@@ -28,13 +28,15 @@ const HomePage = () => {
   useEffect(() => {
     fetchDataMovies();
   }, []);
+
   return (
     <div className="flex flex-col justify-center">
       <Carousel />
       <div className="flex flex-col gap-12 ">
         <DreamersDayCard />
         <ArticleCard />
-        <MovieCard moviesData={moviesData} isLoading={isLoading} />
+        {/* Pass limit prop here to show only 4 movies */}
+        <MovieCard moviesData={moviesData} isLoading={isLoading} limit={4} />
       </div>
       <Footer />
     </div>

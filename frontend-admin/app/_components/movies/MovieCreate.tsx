@@ -1,129 +1,179 @@
 "use client";
 
 import { useState } from "react";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"; // Import CSS for react-toastify
 
-export const MovieCreate = () => {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+export const MovieCreate = ({ closeDialog }: { closeDialog: () => void }) => {
+  const [formData, setFormData] = useState({
+    title: "",
+    releaseYear: "",
+    genre: "",
+    writer: "",
+    director: "",
+    rating: "",
+    trailerUrl: "",
+    imageUrl: "",
+    description: "",
+  });
 
-  const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-    if (file) {
-      const imageURL = URL.createObjectURL(file);
-      setSelectedImage(imageURL);
+  const handleChange = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = event.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    try {
+      const response = await fetch("http://localhost:9000/api/movies", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        toast.success("Кино амжилттай нэмэгдлээ!"); // Show success notification
+        closeDialog(); // Close the dialog after successful submission
+        console.log(data);
+      } else {
+        toast.error("Кино нэмэхэд алдаа гарлаа."); // Show error notification
+        console.log(response);
+      }
+    } catch (error) {
+      console.log("Error:", error);
+      toast.error("Хатуу алдаа гарлаа!"); // Show error notification
     }
   };
 
   return (
     <div className="m-10 bg-white">
-      <div className="grid grid-cols-2 bg-slate-200 rounded-2xl gap-5 shadow-xl">
-        {/* Name input */}
-        <div className="flex flex-col rounded-l-2xl p-10 gap-10">
-          <form className="flex flex-col gap-2">
-            <label htmlFor="name" className="block text-lg font-semibold ">
-              Киноны нэр
-            </label>
+      <form
+        className="grid grid-cols-2 bg-slate-200 rounded-2xl gap-5 shadow-xl p-10"
+        onSubmit={handleSubmit}
+      >
+        <div className="flex flex-col gap-4">
+          {/* Title */}
+          <label className="block text-lg font-semibold">
+            Киноны нэр
             <input
+              type="text"
+              name="title"
               placeholder="Киноны нэрээ оруулна уу..."
-              type="text"
-              id="name"
-              className="mt-1 block w-full py-2 px-2 border-slate-900 rounded-md shadow-sm"
+              className="mt-1 block w-full py-2 px-3 border rounded-md"
+              onChange={handleChange}
             />
-          </form>
+          </label>
 
-          <form className="flex flex-col gap-2">
-            <label htmlFor="name" className="block text-lg font-semibold ">
-              Найруулагчийн нэр
-            </label>
+          {/* Release Year */}
+          <label className="block text-lg font-semibold">
+            Нээлт хийсэн он
             <input
-              placeholder="Найруулагчийн нэрээ оруулна уу..."
-              type="text"
-              id="name"
-              className="mt-1 block w-full py-2 px-2 border-slate-900 rounded-md shadow-sm"
+              type="number"
+              name="releaseYear"
+              placeholder="2010"
+              className="mt-1 block w-full py-2 px-3 border rounded-md"
+              onChange={handleChange}
             />
-          </form>
+          </label>
 
-          {/* Length of time input */}
-          <form className="flex flex-col gap-2">
-            <label htmlFor="length" className="block text-lg font-semibold ">
-              Кино үргэлжлэх хугацаа:
-            </label>
+          {/* Genre */}
+          <label className="block text-lg font-semibold">
+            Жанр
             <input
-              placeholder="Тоогоор оруулна уу..."
               type="text"
-              id="length"
-              className="mt-1 block w-full py-2 px-2 border-slate-900 rounded-md shadow-sm"
+              name="genre"
+              placeholder="Жанр"
+              className="mt-1 block w-full py-2 px-3 border rounded-md"
+              onChange={handleChange}
             />
-          </form>
+          </label>
 
-          <form className="flex flex-col gap-2">
-            <label htmlFor="language" className="block text-lg font-semibold ">
-              Жүжигчид болон уран бүтээлчид
-            </label>
+          {/* Writer */}
+          <label className="block text-lg font-semibold">
+            Бичигч
             <input
-              placeholder="Нэрсийг оруулна уу..."
               type="text"
-              id="language"
-              className="mt-1 block w-full py-2 px-2 border-slate-900 rounded-md shadow-sm"
+              name="writer"
+              placeholder="Нэр"
+              className="mt-1 block w-full py-2 px-3 border rounded-md"
+              onChange={handleChange}
             />
-          </form>
-          {/* Category input */}
-          <form className="flex flex-col gap-2">
-            <label htmlFor="category" className="block text-lg font-semibold ">
-              Киноны жанр, төрөл зүйл
-            </label>
-            <input
-              placeholder="Киноны төрөл зүйлийг оруулна уу..."
-              type="text"
-              id="category"
-              className="mt-1 block w-full py-2 px-2 border-slate-900 rounded-md shadow-sm"
-            />
-          </form>
+          </label>
 
-          {/* Language input */}
-          <form className="flex flex-col gap-2">
-            <label htmlFor="language" className="block text-lg font-semibold ">
-              Киноны тухай
-            </label>
+          {/* Director */}
+          <label className="block text-lg font-semibold">
+            Найруулагч
             <input
-              placeholder="Киноны талаарх үйл явдал..."
               type="text"
-              id="language"
-              className="mt-1 block w-full py-2 px-2 border-slate-900 rounded-md shadow-sm"
+              name="director"
+              placeholder="Нэр"
+              className="mt-1 block w-full py-2 px-3 border rounded-md"
+              onChange={handleChange}
             />
-          </form>
+          </label>
         </div>
-        <div className="flex flex-col justify-between bg-white shadow rounded-r-2xl p-10">
-          <div>
-            <label
-              htmlFor="image"
-              className="text-center block text-lg font-semibold text-gray-800 mb-2"
-            >
-              Постэр зураг
-            </label>
+
+        <div className="flex flex-col gap-4">
+          {/* Rating */}
+          <label className="block text-lg font-semibold">
+            Үнэлгээ (1-10)
             <input
-              type="file"
-              id="image"
-              accept="image/*"
-              className="block w-full px-3 py-2 border border-slate-900 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-200 ease-in-out"
-              onChange={handleImageChange}
+              type="number"
+              name="rating"
+              placeholder="8.8"
+              className="mt-1 block w-full py-2 px-3 border rounded-md"
+              onChange={handleChange}
             />
-            {selectedImage && (
-              <div className="mt-4 flex justify-center">
-                <img
-                  src={selectedImage}
-                  alt="Selected preview"
-                  className="max-w-full flex flex-col object-cover rounded-lg border border-slate-900 shadow-lg"
-                />
-              </div>
-            )}
-          </div>
-          <div className="flex justify-end">
-            <button className="px-5 py-2 rounded-lg bg-orange-400 font-semibold hover:bg-slate-900 hover:text-white">
-              Шинээр нэмэх
-            </button>
-          </div>
+          </label>
+
+          {/* Trailer URL */}
+          <label className="block text-lg font-semibold">
+            Trailer URL
+            <input
+              type="url"
+              name="trailerUrl"
+              placeholder="https://youtube.com"
+              className="mt-1 block w-full py-2 px-3 border rounded-md"
+              onChange={handleChange}
+            />
+          </label>
+
+          {/* Image URL */}
+          <label className="block text-lg font-semibold">
+            Зургийн URL
+            <input
+              type="url"
+              name="imageUrl"
+              placeholder="https://image-url.com"
+              className="mt-1 block w-full py-2 px-3 border rounded-md"
+              onChange={handleChange}
+            />
+          </label>
+
+          {/* Description */}
+          <label className="block text-lg font-semibold">
+            Тайлбар
+            <textarea
+              name="description"
+              placeholder="Киноны талаар..."
+              className="mt-1 block w-full py-2 px-3 border rounded-md"
+              onChange={handleChange}
+            ></textarea>
+          </label>
+
+          <button
+            type="submit"
+            className="px-5 py-2 mt-4 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-700"
+          >
+            Шинээр нэмэх
+          </button>
         </div>
-      </div>
+      </form>
     </div>
   );
 };
