@@ -1,4 +1,4 @@
-import { ImdbStarIcon } from "@/public/Icons/Icons";
+import { StarIcon } from "@/public/Icons/Icons";
 import Link from "next/link";
 import React from "react";
 import { BsChevronRight } from "react-icons/bs";
@@ -44,7 +44,6 @@ const MovieCard = ({
             </div>
           </Link>
         </div>
-
         <div className="w-full">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 py-4">
             {isLoading
@@ -64,41 +63,40 @@ const MovieCard = ({
               : moviesData.slice(0, limit).map((data) => (
                   <div
                     key={data._id}
-                    className="grid rounded-3xl max-w-[280px] shadow-md hover:shadow-lg duration-300 cursor-pointer bg-slate-100 flex-col"
+                    className="grid rounded-xl max-w-[394px] shadow-md hover:shadow-lg duration-300 cursor-pointer bg-slate-100 flex-col"
                   >
                     <img
                       src={`${data?.imageUrl}`}
                       width="360"
                       height="200"
-                      className="rounded-t-3xl justify-center h-80 grid object-cover"
+                      className="rounded-t-xl justify-center h-[240px] grid object-cover"
                       alt={data.title}
                     />
                     <Link
                       href={`/movies/${data?._id}`}
                       className="group p-5 grid z-10"
                     >
-                      <div className="group p-5">
-                        <span className="group-hover:text-cyan-700 font-bold md:text-2xl line-clamp-2 duration-300">
-                          {data?.title}
-                        </span>
+                      <div className="group gap-4">
+                        <div className="flex justify-between items-center gap-2">
+                          <span className="group-hover:text-[#F8941E] text-6 font-bold md:text-2xl line-clamp-2 duration-300">
+                            {data?.title}
+                          </span>
+                          <span className="flex justify-center items-center gap-2">
+                            <span className="text-[24px] font-bold flex items-center group-hover:text-yellow-600 duration-300">
+                              {data?.rating}
+                            </span>
+                            <StarIcon />
+                          </span>
+                        </div>
                         <span className="text-slate-400 pt-2 font-semibold">
                           {data?.releaseYear}
                         </span>
                         <div className="h-20">
-                          <span className="line-clamp-3 py-2 h-20 leading-6 text-sm font-light">
+                          <span className="line-clamp-3 h-20 leading-6 text-sm font-light">
                             Ирээдүйд дэлхий хүн амьдрах боломжгүй болоход a
                             тариачин, НАСА-гийн экс нисгэгч Жозеф Куперт үүрэг
                             өгсөн судлаачдын багийн хамт сансрын хөлөг жолоодож,
                             хүн төрөлхтөнд шинэ гараг олохын тулд.
-                          </span>
-                        </div>
-                        <div className="flex font-black items-center justify-between">
-                          <span className="text-yellow-500 text-xl">
-                            IMDB SCORE
-                          </span>
-                          <span className="text-3xl flex gap-x-1 items-center group-hover:text-yellow-600 duration-300">
-                            {data?.rating}
-                            <ImdbStarIcon />
                           </span>
                         </div>
                       </div>

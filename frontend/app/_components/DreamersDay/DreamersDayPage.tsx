@@ -9,7 +9,6 @@ const DreamersDayPage = () => {
     <div className="flex justify-center">
       <div>
         <DreamersDayHeader />
-
         <DreamersBody />
         <VerySoon />
         <Footer />
