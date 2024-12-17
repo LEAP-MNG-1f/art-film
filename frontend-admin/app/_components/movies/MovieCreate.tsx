@@ -85,7 +85,7 @@ export const MovieCreate = ({
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
       <div className="bg-white w-full max-w-4xl rounded-2xl shadow-2xl overflow-hidden">
-        <div className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white p-5">
+        <div className="bg-orange-400 text-white p-5">
           <h2 className="text-2xl font-bold text-center">
             {movieData ? "Кино засварлах" : "Шинэ кино нэмэх"}
           </h2>
@@ -188,7 +188,7 @@ export const MovieCreate = ({
             <button
               type="button"
               onClick={closeDialog}
-              className="px-6 py-2.5 bg-gray-200 text-gray-800 
+              className="px-6 py-2.5 bg-gray-200 font-semibold text-gray-800 
                          rounded-lg hover:bg-gray-300 
                          focus:outline-none focus:ring-2 focus:ring-gray-400 
                          transition-all duration-300"
@@ -197,9 +197,9 @@ export const MovieCreate = ({
             </button>
             <button
               type="submit"
-              className="px-6 py-2.5 bg-indigo-600 text-white 
-                         rounded-lg hover:bg-indigo-700 
-                         focus:outline-none focus:ring-2 focus:ring-indigo-400 
+              className="px-6 py-2.5 bg-orange-400 text-white  font-semibold
+                         rounded-lg hover:bg-orange-600 
+                         focus:outline-none focus:ring-2 focus:ring-orange-600 
                          transition-all duration-300"
             >
               {movieData ? "Шинэчлэх" : "Нэмэх"}
