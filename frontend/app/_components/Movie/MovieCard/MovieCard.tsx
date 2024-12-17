@@ -62,22 +62,21 @@ const MovieCard = ({
                   </div>
                 ))
               : moviesData.slice(0, limit).map((data) => (
-                  <Link
-                    href={`/movies/${data?._id}`}
-                    className="group p-5 grid z-10"
+                  <div
+                    key={data._id}
+                    className="grid rounded-3xl max-w-[280px] shadow-md hover:shadow-lg duration-300 cursor-pointer bg-slate-100 flex-col"
                   >
-                    <div
-                      key={data._id}
-                      className="grid rounded-3xl max-w-[280px] shadow-md hover:shadow-lg duration-300 cursor-pointer bg-slate-100 flex-col"
+                    <img
+                      src={`${data?.imageUrl}`}
+                      width="360"
+                      height="200"
+                      className="rounded-t-3xl justify-center h-80 grid object-cover"
+                      alt={data.title}
+                    />
+                    <Link
+                      href={`/movies/${data?._id}`}
+                      className="group p-5 grid z-10"
                     >
-                      <img
-                        src={`${data?.imageUrl}`}
-                        width="360"
-                        height="200"
-                        className="rounded-t-3xl justify-center h-80 grid object-cover"
-                        alt={data.title}
-                      />
-
                       <div className="group p-5">
                         <span className="group-hover:text-cyan-700 font-bold md:text-2xl line-clamp-2 duration-300">
                           {data?.title}
@@ -103,8 +102,8 @@ const MovieCard = ({
                           </span>
                         </div>
                       </div>
-                    </div>
-                  </Link>
+                    </Link>
+                  </div>
                 ))}
           </div>
         </div>
