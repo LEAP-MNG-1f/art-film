@@ -44,10 +44,9 @@ const MoviePage = () => {
 
   return (
     <div className="flex justify-center">
-      <div>
+      <div className="max-w-[1220px]">
         <HeaderPage />
-        <div className="py-10">
-          {/* No limit prop passed here, so all movies will be shown */}
+        <div className="pt-12">
           <MovieCard moviesData={moviesData} isLoading={isLoading} />
           <Recommend />
         </div>
