@@ -15,7 +15,7 @@ const DreamersDayHeader = () => {
             />
           </Link>
         </div>
-        <nav className="flex gap-[32px] ]">
+        <nav className="flex gap-[32px] w-[802px]">
           <Link
             href="/dreamers-day"
             className="text-black font-roboto text-[16px] font-semibold leading-normal hover:text-[#F8941E]"
@@ -35,8 +35,6 @@ const DreamersDayHeader = () => {
             Нийтлэл
           </Link>
         </nav>
-
-        <div className="w-11 h-11 rounded-[50%] border border-black"></div>
       </div>
     </header>
   );

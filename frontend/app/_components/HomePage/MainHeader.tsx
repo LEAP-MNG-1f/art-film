@@ -33,12 +33,7 @@ const MainHeader = () => {
         >
           Нийтлэл
         </Link>
-        <Link
-          href="/articles"
-          className="text-white font-roboto text-[16px] font-semibold leading-normal hover:text-[#F8941E]"
-        >
-          Дараа үзэх
-        </Link>
+   
       </nav>
     </header>
   );
