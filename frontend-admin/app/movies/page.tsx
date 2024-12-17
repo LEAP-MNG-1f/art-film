@@ -6,9 +6,9 @@ export default function Home() {
   return (
     <div className="flex w-screen ">
       <ControlPanel />
-      <div className="flex flex-col w-screen h-screen ml-[400] ">
+      <div className="flex flex-col w-screen h-screen ml-[373]">
         <Header />
-        <div className="px-5 py-5 mt-[60]">
+        <div className="border-b-2 mt-[60]">
           <MoviesMain />
         </div>
       </div>

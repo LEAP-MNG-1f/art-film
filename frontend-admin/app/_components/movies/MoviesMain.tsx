@@ -63,7 +63,7 @@ export const MoviesMain = () => {
   }, []);
 
   return (
-    <div className="flex flex-col gap-10 container mx-auto px-4 py-8 bg-gray-50 min-h-screen">
+    <div className="flex flex-col min-h-screen">
       <MoviesHeader />
       <MoviesList
         movieData={movieData}
