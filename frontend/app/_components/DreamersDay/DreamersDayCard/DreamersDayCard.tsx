@@ -15,12 +15,12 @@ const DreamersDayCard = () => {
     // Create a target date exactly 4 days from now
     const targetDate = new Date();
     targetDate.setDate(targetDate.getDate() + 4);
-    
+
     // Set the time to exactly midnight (00:00:00)
     targetDate.setHours(0, 0, 0, 0);
 
     const difference = targetDate.getTime() - new Date().getTime();
-    
+
     if (difference <= 0) {
       return { days: 0, hours: 0, minutes: 0, seconds: 0 };
     }
@@ -29,7 +29,7 @@ const DreamersDayCard = () => {
       days: Math.floor(difference / (1000 * 60 * 60 * 24)),
       hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
       minutes: Math.floor((difference / (1000 * 60)) % 60),
-      seconds: Math.floor((difference / 1000) % 60)
+      seconds: Math.floor((difference / 1000) % 60),
     };
   }
 
@@ -37,11 +37,12 @@ const DreamersDayCard = () => {
   useEffect(() => {
     // Exit if time is already up
     if (
-      timeLeft.days === 0 && 
-      timeLeft.hours === 0 && 
-      timeLeft.minutes === 0 && 
+      timeLeft.days === 0 &&
+      timeLeft.hours === 0 &&
+      timeLeft.minutes === 0 &&
       timeLeft.seconds === 0
-    ) return;
+    )
+      return;
 
     // Set up interval to update countdown
     const timer = setInterval(() => {
@@ -65,9 +66,25 @@ const DreamersDayCard = () => {
     }
 
     return (
-      <div className="bg-black/70 px-4 py-2 rounded-lg">
-        <div className="text-xl font-bold text-white">
-          Үлдсэн хугацаа: {days} өдөр {hours} цаг {minutes} минут {seconds} секунд
+      <div className="flex items-center  gap-4">
+        <div className="flex flex-col items-center border border-white px-2 rounded-lg backdrop-blur-md">
+          <div className="text-4xl font-semibold text-white">{days}</div>
+          <div className="text-lg text-white">өдөр</div>
+        </div>
+        <div className="text-4xl font-semibold text-white">:</div>
+        <div className="flex flex-col items-center border border-white px-2 rounded-lg backdrop-blur-md">
+          <div className="text-4xl font-semibold text-white">{hours}</div>
+          <div className="text-lg text-white">цаг</div>
+        </div>
+        <div className="text-4xl font-semibold text-white">:</div>
+        <div className="flex flex-col items-center border border-white px-2 rounded-lg backdrop-blur-md">
+          <div className="text-4xl font-semibold text-white">{minutes}</div>
+          <div className="text-lg text-white">минут</div>
+        </div>
+        <div className="text-4xl font-semibold text-white">:</div>
+        <div className="flex flex-col items-center border border-white px-2 rounded-lg backdrop-blur-md">
+          <div className="text-4xl font-semibold text-white">{seconds}</div>
+          <div className="text-lg text-white">секунд</div>
         </div>
       </div>
     );
@@ -83,7 +100,7 @@ const DreamersDayCard = () => {
             backgroundImage: `url('https://images4.alphacoders.com/133/1336451.jpg')`,
           }}
         >
-          <div className="w-[1141px] h-[208px] flex flex-col gap-6">
+          <div className="w-[1141px] h-[218px] flex flex-col gap-2">
             <div className="flex flex-col gap-4">
               <div className="w-[103px] h-[28px] bg-[#F8941E] rounded-md flex items-center justify-center text-white font-['Work_Sans'] text-[14px] font-medium leading-[20px]">
                 Movie event
