@@ -4,7 +4,7 @@ import { MoviesMain } from "../_components/movies/MoviesMain";
 
 export default function Home() {
   return (
-    <div className="flex">
+    <div className="flex h-screen">
       <ControlPanel />
       <div className="flex flex-col w-full">
         <Header />

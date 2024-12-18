@@ -4,7 +4,7 @@ import { Header } from "../_components/mainpage/maincontainer/Header";
 
 export default function Home() {
   return (
-    <div className="flex w-full h-full">
+    <div className="flex w-full h-screen">
       <ControlPanel />
       <div className="flex flex-col w-full">
         <Header />
