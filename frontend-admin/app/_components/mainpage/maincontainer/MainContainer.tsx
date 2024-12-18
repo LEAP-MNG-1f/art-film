@@ -4,11 +4,11 @@ import { Header } from "./Header";
 
 export const MainContainer = () => {
   return (
-    <div className="flex w-screen ">
+    <div className="flex">
       <ControlPanel />
-      <div className="flex flex-col w-screen h-screen ml-[373] ">
+      <div className="flex flex-col w-full">
         <Header />
-        <div className="border-b-2 mt-[60]">
+        <div className="">
           <MainStatsSection />
         </div>
       </div>

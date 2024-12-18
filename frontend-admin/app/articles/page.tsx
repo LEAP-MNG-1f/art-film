@@ -1,15 +1,15 @@
-import { FeedbackMain } from "../_components/feedback/FeedbackMain";
+import { AritcleMain } from "../_components/feedback/AritcleMain";
 import { ControlPanel } from "../_components/mainpage/controlpanel/ControlPanel";
 import { Header } from "../_components/mainpage/maincontainer/Header";
 
 export default function Home() {
   return (
-    <div className="flex w-screen  ">
+    <div className="flex w-full h-full">
       <ControlPanel />
-      <div className="flex flex-col w-screen h-screen ml-[373] ">
+      <div className="flex flex-col w-full">
         <Header />
-        <div className="border-b-2 mt-[60]">
-          <FeedbackMain />
+        <div className="">
+          <AritcleMain />
         </div>
       </div>
     </div>

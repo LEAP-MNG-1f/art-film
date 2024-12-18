@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-export const FeedbackCreate = () => {
+export const AritcleCreate = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {

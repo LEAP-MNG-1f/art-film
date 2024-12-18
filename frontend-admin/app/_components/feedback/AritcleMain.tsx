@@ -1,11 +1,11 @@
-import { FeedbackHeader } from "./FeedbackHeader";
+import { ArticleHeader } from "./ArticleHeader";
 import { MockDataFeed } from "./MockDataFeed";
 
-export const FeedbackMain = () => {
+export const AritcleMain = () => {
   return (
-    <div className="flex flex-col gap-8 pt-5">
-      <FeedbackHeader />
-      <div className="flex flex-col gap-10">
+    <div className="flex flex-col gap-8">
+      <ArticleHeader />
+      <div className="flex flex-col gap-10 px-10">
         <MockDataFeed
           author="Baldan"
           movie="Baldangiin duuli"

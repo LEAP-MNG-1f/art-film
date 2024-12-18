@@ -14,7 +14,7 @@ export const ControlPanel = () => {
   const isActive = (path: string) => pathname === path;
 
   return (
-    <div className="fixed flex flex-col h-screen pl-5 border border-l-2">
+    <div className="flex flex-col h-screen pl-5 border-r-2">
       <div className="mb-10">
         <img width={350} src="/Icons/ArtfilmLogo.png" alt="Logo" />
       </div>
