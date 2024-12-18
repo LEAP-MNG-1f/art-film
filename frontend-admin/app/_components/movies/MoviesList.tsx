@@ -19,7 +19,7 @@ const MoviesList = ({
           </h2>
         </div>
 
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto h-[800px] overflow-scroll">
           <table className="w-full">
             <thead className="bg-gray-100">
               <tr>
