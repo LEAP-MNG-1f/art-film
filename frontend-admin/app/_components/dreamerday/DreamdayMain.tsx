@@ -1,9 +1,9 @@
-import { DreamerdayCreate } from "./DreamerdayCreate";
+import { DreamdayHeader } from "./DreamDayHeader";
 
 export const DreamerdayMain = () => {
   return (
     <div>
-      <DreamerdayCreate />
+      <DreamdayHeader />
     </div>
   );
 };
