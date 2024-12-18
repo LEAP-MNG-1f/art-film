@@ -1,6 +1,6 @@
-import { DreamerdayMain } from "../_components/dreamerday/DreamdayMain";
-import { ControlPanel } from "../_components/mainpage/controlpanel/ControlPanel";
-import { Header } from "../_components/mainpage/maincontainer/Header";
+import { DreamerdayMain } from "../_components/DreamersDay/DreamdayMain";
+import { ControlPanel } from "../_components/MainPage/ControlPanel/ControlPanel";
+import { Header } from "../_components/MainPage/MainContainer/Header";
 
 export default function Home() {
   return (

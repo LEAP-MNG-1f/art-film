@@ -1,4 +1,4 @@
-import { AdminPage } from "./_components/mainpage/AdminPage";
+import { AdminPage } from "./_components/MainPage/AdminPage";
 
 export default function Home() {
   return (
