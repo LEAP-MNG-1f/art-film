@@ -13,7 +13,7 @@ const ArticleDetail = ({ articleData }: { articleData: Article | null }) => {
   }
 
   return (
-    <div className="flex flex-col justify-center">
+    <div className="flex flex-col items-center">
       <Header />
       <div className="max-w-[1180px] flex items-center flex-col">
         <div className="max-w-[1180px]">
