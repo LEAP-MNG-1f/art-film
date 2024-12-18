@@ -1,4 +1,4 @@
-import { AritcleMain } from "../_components/feedback/AritcleMain";
+import { AritcleMain } from "../_components/Articles/AritcleMain";
 import { ControlPanel } from "../_components/mainpage/controlpanel/ControlPanel";
 import { Header } from "../_components/mainpage/maincontainer/Header";
 

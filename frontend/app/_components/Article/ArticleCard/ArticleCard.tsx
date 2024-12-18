@@ -1,12 +1,7 @@
+import { Article } from "@/app/articles/[id]/page";
 import Link from "next/link";
 import React from "react";
 import { BsChevronRight } from "react-icons/bs";
-
-type Article = {
-  _id: string;
-  title: string;
-  imageUrl: string;
-};
 
 function ArticleCard({
   articlesData,
@@ -54,7 +49,7 @@ function ArticleCard({
                     >
                       <img
                         key={data?._id}
-                        src={data?.imageUrl}
+                        src={data?.image}
                         width="360"
                         height="200"
                         alt=""
@@ -77,6 +72,7 @@ function ArticleCard({
                           <div className="flex gap-2 items-center mt-auto">
                             <p className="text-[rgba(0,0,0,0.45)] font-roboto text-[14px] font-normal leading-[140%]">
                               2 өдрийн өмнө
+                              {/* {data?.createdAt} */}
                             </p>
                           </div>
                         </div>
