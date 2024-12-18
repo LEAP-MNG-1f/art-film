@@ -26,7 +26,7 @@ const MovieCard = ({
   isLoading: boolean;
   limit?: number;
 }) => {
-  const skeletonCards = Array.from({ length: 4 }, (_, i) => i);
+  const skeletonCards = Array.from({ length: 8 }, (_, i) => i);
 
   return (
     <div className="flex justify-center pb-10 px-4 lg:px-0">
@@ -50,9 +50,9 @@ const MovieCard = ({
               ? skeletonCards.map((_, index) => (
                   <div
                     key={index}
-                    className="grid rounded-3xl w-[280px] shadow-md hover:shadow-lg duration-300 bg-gray-200 flex-col animate-pulse"
+                    className="grid rounded-3xl w-[280px] shadow-md hover:shadow-lg duration-300 bg-gray-200 flex-col animate-pulse -z-10"
                   >
-                    <div className="rounded-t-3xl h-[380px] bg-gray-300"></div>
+                    <div className="rounded-t-3xl h-[285px] bg-gray-300"></div>
                     <div className="p-5">
                       <div className="h-6 bg-gray-300 mb-2 rounded"></div>
                       <div className="h-4 bg-gray-300 mb-2 rounded"></div>

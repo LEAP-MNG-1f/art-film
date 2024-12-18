@@ -46,8 +46,9 @@ const MoviePage = () => {
     <div className="flex justify-center">
       <div>
         <HeaderPage />
-        <div className="pt-12">
+        <div className="justify-center pt-12">
           <MovieCard moviesData={moviesData} isLoading={isLoading} />
+
           <Recommend />
         </div>
         <Footer />
