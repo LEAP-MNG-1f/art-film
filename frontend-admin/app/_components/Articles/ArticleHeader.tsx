@@ -1,13 +1,57 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { SearchIcon } from "@/public/Icons/SvgFiles";
-import { AritcleCreate } from "./ArticleCreate";
+import ArticleCreate from "./ArticleCreate";
+
+type Comment = {
+  _id: string;
+  content: string;
+  authorName: string;
+  likes: number;
+  createdAt: string;
+  replies: Comment[]; // Nested replies
+};
+
+export type Article = {
+  _id: string;
+  title: string;
+  content: string;
+  image: string;
+  comments: Comment[];
+  // createdAt: Date;
+};
 
 export const ArticleHeader = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [articles, setArticles] = useState<Article[]>([]);
+  const [selectedArticle, setSelectedArticle] = useState<Article | undefined>(
+    undefined
+  );
 
-  const handleModalOpen = () => setIsModalOpen(true);
-  const handleModalClose = () => setIsModalOpen(false);
+  const fetchData = async () => {
+    try {
+      const response = await fetch("http://localhost:9000/api/articles");
+      const data = await response.json();
+      setArticles(data.data);
+    } catch (error) {
+      console.error("Error fetching articles:", error);
+      setArticles([]);
+    }
+  };
+
+  const handleModalOpen = (article?: Article) => {
+    setSelectedArticle(article);
+    setIsModalOpen(true);
+  };
+
+  const handleModalClose = () => {
+    setIsModalOpen(false);
+    setSelectedArticle(undefined);
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   return (
     <div className="flex justify-between items-center px-5 py-2 border-b-2 pt-[50px]">
@@ -26,7 +70,7 @@ export const ArticleHeader = () => {
 
         <button
           className="px-5 py-1 rounded-lg font-semibold bg-orange-400 text-white hover:bg-orange-600 hover:text-white"
-          onClick={handleModalOpen}
+          onClick={() => handleModalOpen()}
         >
           Create
         </button>
@@ -40,7 +84,10 @@ export const ArticleHeader = () => {
               >
                 &times;
               </button>
-              <AritcleCreate />
+              <ArticleCreate
+                closeDialog={handleModalClose}
+                articleData={selectedArticle}
+              />
             </div>
           </div>
         )}

@@ -1,24 +1,7 @@
 import Footer from "../HomePage/Footer";
 import React from "react";
 import Header from "./Header";
-
-type Comment = {
-  _id: string;
-  content: string;
-  authorName: string;
-  likes: number;
-  createdAt: string;
-  replies: Comment[]; // Nested replies
-};
-
-type Article = {
-  _id: string;
-  title: string;
-  content: string;
-  image: string;
-  comments: Comment[];
-  createdAt: Date;
-};
+import { Article } from "@/app/articles/[id]/page";
 
 const ArticleDetail = ({ articleData }: { articleData: Article | null }) => {
   if (!articleData) {

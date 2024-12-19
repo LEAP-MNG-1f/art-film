@@ -27,7 +27,7 @@ const HomePage = () => {
   const fetchDataArticles = async () => {
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/movies`
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/articles`
       );
       const data = await response.json();
       setArticleData(data.data);

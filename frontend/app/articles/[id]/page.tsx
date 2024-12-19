@@ -19,7 +19,7 @@ export type Article = {
   content: string;
   image: string;
   comments: Comment[];
-  createdAt: Date;
+  // createdAt: Date;
 };
 
 const Page = () => {

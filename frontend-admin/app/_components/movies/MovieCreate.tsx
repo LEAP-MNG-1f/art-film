@@ -46,9 +46,7 @@ export const MovieCreate = ({
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  // Өөрчлөлт оруулах хэсэг
   const handleSearchMovie = async () => {
-    // searchTitle state-ийг input-аас авах function нэмнэ
     const searchInput = document.querySelector(
       'input[name="title"]'
     ) as HTMLInputElement;
@@ -158,9 +156,22 @@ export const MovieCreate = ({
                   type="button"
                   onClick={handleSearchMovie}
                   className="px-4 py-2.5 bg-blue-500 text-white rounded-lg 
-                             hover:bg-blue-600 transition-all duration-300"
+             hover:bg-blue-600 transition-all duration-300"
                 >
-                  Хайх
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    className="w-6 h-6 mr-2"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm0 0l5 5"
+                    />
+                  </svg>
                 </button>
               </div>
             </div>
