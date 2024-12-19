@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Movie } from "./MoviesMain";
+import { SearchSVG } from "@/public/Icons/SvgFiles";
 
 export const MovieCreate = ({
   closeDialog,
@@ -141,7 +142,7 @@ export const MovieCreate = ({
           className="p-8 grid md:grid-cols-2 gap-6 bg-gray-50"
         >
           <div className="space-y-5">
-            <div className="flex space-x-2">
+            <div className="flex gap-2 justify-between">
               <InputField
                 label="Киноны нэр"
                 type="text"
@@ -151,30 +152,15 @@ export const MovieCreate = ({
                 onChange={handleChange}
                 className="flex-grow"
               />
-              <div className="flex items-end">
-                <button
-                  type="button"
-                  onClick={handleSearchMovie}
-                  className="px-4 py-2.5 bg-blue-500 text-white rounded-lg 
-             hover:bg-blue-600 transition-all duration-300"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    className="w-6 h-6 mr-2"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm0 0l5 5"
-                    />
-                  </svg>
-                </button>
-              </div>
+
+              <button
+                onClick={handleSearchMovie}
+                className="flex items-end pb-1"
+              >
+                <SearchSVG />
+              </button>
             </div>
+
             <InputField
               label="Гарсан он"
               type="number"
