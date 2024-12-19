@@ -3,13 +3,13 @@ import {
   Funny,
   Horror,
   Horror1,
-  Kino,
   Romans,
   StarIcon,
 } from "@/public/Icons/Icons";
 import Link from "next/link";
 import React, { useState } from "react";
 import { MdBorderAll } from "react-icons/md";
+import { GiCrimeSceneTape } from "react-icons/gi";
 type Movie = {
   _id: string;
   title: string;
@@ -55,6 +55,11 @@ const MovieCard = ({
     { name: "Триллер", icon: <Horror1 />, value: "Thriller" },
     { name: "Авангард", icon: <Avangard />, value: "Avangard" },
     { name: "Инээдмийн", icon: <Funny />, value: "Comedy" },
+    {
+      name: "Гэмт Хэрэг",
+      icon: <GiCrimeSceneTape className="w-[25px] h-[24px] text-[#F8941E]" />,
+      value: "Crime",
+    },
   ];
 
   return (
