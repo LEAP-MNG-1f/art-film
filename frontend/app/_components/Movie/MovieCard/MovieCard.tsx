@@ -1,7 +1,16 @@
-import { StarIcon } from "@/public/Icons/Icons";
+import {
+  Avangard,
+  Funny,
+  Horror,
+  Horror1,
+  Kino,
+  Romans,
+  StarIcon,
+} from "@/public/Icons/Icons";
 import Link from "next/link";
 import React from "react";
 import { BsChevronRight } from "react-icons/bs";
+
 
 type Movie = {
   _id: string;
@@ -31,6 +40,52 @@ const MovieCard = ({
   return (
     <div className="flex justify-center pb-10 px-4 lg:px-0">
       <div className="max-w-[1180px] lg:w-[1180px] flex flex-col gap-4">
+        <div className="flex justify-between">
+          <div className="w-[100px] h-[35px] overflow-hidden text-white truncate font-helvetica text-lg font-bold leading-tight bg-[#F8941E] rounded-md flex justify-center items-center">
+            Бүгд
+          </div>
+          <div className="flex gap-4 items-center">
+            <Romans />
+            <p className="overflow-hidden text-black truncate font-helvetica text-lg font-bold leading-tight">
+              Романс
+            </p>
+          </div>
+          <div className="flex gap-4 items-center ">
+            <Horror />
+
+            <p className="overflow-hidden text-black truncate font-helvetica text-lg font-bold leading-tight">
+            Аймшгийн
+            </p>
+          </div>
+          <div className="flex gap-4 items-center ">
+            <Horror1 />
+
+            <p className="overflow-hidden text-black truncate font-helvetica text-lg font-bold leading-tight">
+            Триллер
+            </p>
+          </div>
+          <div className="flex gap-4 items-center ">
+            <Avangard />
+
+            <p className="overflow-hidden text-black truncate font-helvetica text-lg font-bold leading-tight">
+            Авангард
+            </p>
+          </div>
+          <div className="flex gap-4 items-center ">
+            <Funny />
+
+            <p className="overflow-hidden text-black truncate font-helvetica text-lg font-bold leading-tight">
+            Инээдмийн
+            </p>
+          </div>
+          <div className="flex gap-4 items-center ">
+            <Kino />
+
+            <p className="overflow-hidden text-black truncate font-helvetica text-lg font-bold leading-tight">
+              Романс
+            </p>
+          </div>
+        </div>
         <div className="flex justify-between h-[44px] w-full">
           <p className="text-black font-roboto-condensed text-[32px] flex items-center font-semibold leading-[24px]">
             КИНО
