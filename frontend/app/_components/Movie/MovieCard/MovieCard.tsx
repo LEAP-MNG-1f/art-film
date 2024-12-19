@@ -1,5 +1,5 @@
 import {
-  Avangard,
+  
   Funny,
   Horror,
   Horror1,
@@ -45,52 +45,13 @@ const MovieCard = ({
     : moviesData;
 
   // Жанрын сонголт хийх логик
-  const genres = [
-    {
-      name: "Бүгд",
-      icon: <MdBorderAll className="w-[25px] h-[24px] text-[#F8941E] " />,
-      value: null,
-    },
-    { name: "Романс", icon: <Romans />, value: "Romance" },
-    { name: "Аймшгийн", icon: <Horror />, value: "Horror" },
-    { name: "Триллер", icon: <Horror1 />, value: "Thriller" },
-    {
-      name: "Шинжлэх ухаан",
-      icon: <GiMaterialsScience className="w-[25px] h-[24px] text-[#F8941E]" />,
-      value: "Sci-Fi",
-    },
-    { name: "Инээдмийн", icon: <Funny />, value: "Comedy" },
-    {
-      name: "Гэмт Хэрэг",
-      icon: <GiCrimeSceneTape className="w-[25px] h-[24px] text-[#F8941E]" />,
-      value: "Crime",
-    },
-  ];
+  
 
   return (
     <div className="flex justify-center pb-10 px-4 lg:px-0">
       <div className="max-w-[1180px] lg:w-[1180px] flex flex-col gap-4">
         {/* Genre selection */}
-        <div className="flex justify-between flex-wrap mb-6">
-          {genres.map((genre) => (
-            <div
-              key={genre.name}
-              className={`flex gap-4 items-center cursor-pointer px-4 py-2 rounded-lg ${
-                selectedGenre === genre.value ? "text-[#F8941E] font-bold" : ""
-              }`}
-              onClick={() =>
-                setSelectedGenre(
-                  genre.value === selectedGenre ? null : genre.value
-                )
-              } // Toggle genre filter
-            >
-              {genre.icon}
-              <p className="overflow-hidden truncate font-helvetica text-lg leading-tight">
-                {genre.name}
-              </p>
-            </div>
-          ))}
-        </div>
+        
 
         <div className="max-w-[1180px]">
           <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 py-4">
