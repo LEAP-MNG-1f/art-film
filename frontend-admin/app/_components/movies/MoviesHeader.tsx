@@ -1,6 +1,6 @@
 "use client";
 import { SearchIcon } from "@/public/Icons/SvgFiles";
-import { MovieCreate } from "./MovieCreate";
+import { MovieCreate } from "@/app/_components/Movies/MovieCreate";
 import { useState } from "react";
 
 export const MoviesHeader = () => {

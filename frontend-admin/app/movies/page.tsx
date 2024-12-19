@@ -1,6 +1,6 @@
 import { ControlPanel } from "../_components/MainPage/ControlPanel/ControlPanel";
 import { Header } from "../_components/MainPage/MainContainer/Header";
-import { MoviesMain } from "../_components/movies/MoviesMain";
+import { MoviesMain } from "../_components/Movies/MoviesMain";
 
 export default function Home() {
   return (
