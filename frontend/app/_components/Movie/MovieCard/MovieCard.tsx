@@ -9,8 +9,7 @@ import {
 } from "@/public/Icons/Icons";
 import Link from "next/link";
 import React, { useState } from "react";
-import { BsChevronRight } from "react-icons/bs";
-
+import { MdBorderAll } from "react-icons/md";
 type Movie = {
   _id: string;
   title: string;
@@ -46,12 +45,16 @@ const MovieCard = ({
 
   // Жанрын сонголт хийх логик
   const genres = [
+    {
+      name: "Бүгд",
+      icon: <MdBorderAll className="w-[25px] h-[24px] text-[#F8941E] " />,
+      value: null,
+    },
     { name: "Романс", icon: <Romans />, value: "Romance" },
     { name: "Аймшгийн", icon: <Horror />, value: "Horror" },
     { name: "Триллер", icon: <Horror1 />, value: "Thriller" },
     { name: "Авангард", icon: <Avangard />, value: "Avangard" },
     { name: "Инээдмийн", icon: <Funny />, value: "Comedy" },
-    // { name: "Роман", icon: <Kino />, value: "Romance" }, // Давхар Романс байна уу
   ];
 
   return (
@@ -61,9 +64,9 @@ const MovieCard = ({
         <div className="flex justify-between flex-wrap mb-6">
           {genres.map((genre) => (
             <div
-              key={genre.value}
-              className={`flex gap-4 items-center cursor-pointer ${
-                selectedGenre === genre.value ? "text-[#F8941E]" : "text-black"
+              key={genre.name}
+              className={`flex gap-4 items-center cursor-pointer px-4 py-2 rounded-lg ${
+                selectedGenre === genre.value ? "text-[#F8941E] font-bold" : ""
               }`}
               onClick={() =>
                 setSelectedGenre(
@@ -72,7 +75,7 @@ const MovieCard = ({
               } // Toggle genre filter
             >
               {genre.icon}
-              <p className="overflow-hidden truncate font-helvetica text-lg font-bold leading-tight hover:text-[#F8941E]">
+              <p className="overflow-hidden truncate font-helvetica text-lg leading-tight">
                 {genre.name}
               </p>
             </div>
@@ -129,7 +132,7 @@ const MovieCard = ({
                             Ирээдүйд дэлхий хүн амьдрах боломжгүй болоход a
                             тариачин, НАСА-гийн экс нисгэгч Жозеф Куперт үүрэг
                             өгсөн судлаачдын багийн хамт сансрын хөлөг жолоодож,
-                            хүн төрөлхтөнд шинэ гараг олохын тулд.
+                            хүн төрөлхтөнд шинэ гараг олохын тулд.s
                           </span>
                         </div>
                       </div>
