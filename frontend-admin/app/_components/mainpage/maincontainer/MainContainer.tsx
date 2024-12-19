@@ -1,4 +1,4 @@
-import { ControlPanel } from "../controlpanel/ControlPanel";
+import { ControlPanel } from "../ControlPanel/ControlPanel";
 import { MainStatsSection } from "./MainStatsSection";
 import { Header } from "./Header";
 

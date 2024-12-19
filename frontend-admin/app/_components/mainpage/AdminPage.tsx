@@ -1,4 +1,4 @@
-import { MainContainer } from "./maincontainer/MainContainer";
+import { MainContainer } from "./MainContainer/MainContainer";
 
 export const AdminPage = () => {
   return (
