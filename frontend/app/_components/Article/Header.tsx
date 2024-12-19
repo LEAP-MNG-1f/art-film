@@ -1,7 +1,15 @@
 "use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
+  const pathname = usePathname();
+
+  const getLinkStyle = (path: string) =>
+    pathname === path
+      ? "text-[#F8941E] font-roboto text-[16px] font-semibold leading-normal"
+      : "text-black font-roboto text-[16px] font-semibold leading-normal hover:text-[#F8941E]";
+
   return (
     <header className="flex justify-center items-center py-[32px]">
       <div className="w-[1180px] h-[44px] flex gap-[320px]">
@@ -15,22 +23,13 @@ const Header = () => {
           </Link>
         </div>
         <nav className="flex justify-center items-center gap-[32px]">
-          <Link
-            href="/dreamers-day"
-            className="text-black font-roboto text-[16px] font-semibold leading-normal hover:text-[#F8941E]"
-          >
+          <Link href="/dreamers-day" className={getLinkStyle("/dreamers-day")}>
             Dreamers’ Day
           </Link>
-          <Link
-            href="/movies"
-            className="text-black font-roboto text-[16px] font-semibold leading-normal hover:text-[#F8941E]"
-          >
+          <Link href="/movies" className={getLinkStyle("/movies")}>
             Кино
           </Link>
-          <Link
-            href="/articles"
-            className="text-black font-roboto text-[16px] font-semibold leading-normal hover:text-[#F8941E]"
-          >
+          <Link href="/articles" className={getLinkStyle("/articles")}>
             Нийтлэл
           </Link>
         </nav>

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ButtonCardBO } from "../../utils/ButtonCard";
+import { ButtonCardBO } from "../../Utils/ButtonCard";
 
 type StatType = {
   title: string;
