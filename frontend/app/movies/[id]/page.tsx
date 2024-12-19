@@ -30,7 +30,9 @@ const Page = () => {
 
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://localhost:9000/api/movies/${id}`);
+        const response = await fetch(
+          `${process.env.NEXT_PUBLIC_BACKEND_URL}/movies/${id}`
+        );
 
         if (!response.ok) {
           const errorText = await response.text();
@@ -61,8 +63,6 @@ const Page = () => {
 
     fetchData();
   }, [id]);
-
- 
 
   return (
     <div>

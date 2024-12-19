@@ -73,9 +73,9 @@ export const MovieCreate = ({
 
     try {
       const response = await fetch(
-        `http://localhost:9000/api/omdb/movie?title=${encodeURIComponent(
-          searchTitleValue
-        )}`
+        `${
+          process.env.NEXT_PUBLIC_BACKEND_URL
+        }/omdb/movie?title=${encodeURIComponent(searchTitleValue)}`
       );
 
       const result = await response.json();
@@ -110,8 +110,8 @@ export const MovieCreate = ({
     try {
       const method = movieData ? "PUT" : "POST";
       const url = movieData
-        ? `http://localhost:9000/api/movies/${movieData._id}`
-        : "http://localhost:9000/api/movies";
+        ? `${process.env.NEXT_PUBLIC_BACKEND_URL}/movies/${movieData._id}`
+        : `${process.env.NEXT_PUBLIC_BACKEND_URL}/movies`;
       const response = await fetch(url, {
         method,
         headers: {

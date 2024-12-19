@@ -39,8 +39,8 @@ export const ArticleCreate = ({
     try {
       const method = articleData ? "PUT" : "POST";
       const url = articleData
-        ? `http://localhost:9000/api/articles/${articleData._id}`
-        : "http://localhost:9000/api/articles";
+        ? `${process.env.NEXT_PUBLIC_BACKEND_URL}/articles/${articleData._id}`
+        : `${process.env.NEXT_PUBLIC_BACKEND_URL}/articles`;
       const response = await fetch(url, {
         method,
         headers: {

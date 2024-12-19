@@ -25,7 +25,9 @@ export const MoviesMain = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch("http://localhost:9000/api/movies");
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/movies`
+      );
       const data = await response.json();
       setMovieData(data.data);
     } catch (error) {
@@ -36,9 +38,12 @@ export const MoviesMain = () => {
 
   const handleDelete = async (id: string) => {
     try {
-      const response = await fetch(`http://localhost:9000/api/movies/${id}`, {
-        method: "DELETE",
-      });
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/movies/${id}`,
+        {
+          method: "DELETE",
+        }
+      );
       if (response.ok) {
         setMovieData((prevData) =>
           prevData.filter((movie) => movie._id !== id)
