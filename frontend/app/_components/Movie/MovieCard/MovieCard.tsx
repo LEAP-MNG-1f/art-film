@@ -35,51 +35,6 @@ const MovieCard = ({
 }) => {
   const skeletonCards = Array.from({ length: 8 }, (_, i) => i);
 
-
-  return (
-    <div className="flex justify-center pb-10 px-4 lg:px-0">
-      <div className="max-w-[1180px] lg:w-[1180px] flex flex-col gap-4">
-        <div className="flex justify-between">
-          <div className="w-[100px] h-[35px] overflow-hidden text-white truncate font-helvetica text-lg font-bold leading-tight bg-[#F8941E] rounded-md flex justify-center items-center">
-            Бүгд
-          </div>
-          <div className="flex gap-4 items-center">
-            <Romans />
-            <p className="overflow-hidden text-black truncate font-helvetica text-lg font-bold leading-tight">
-              Романс
-            </p>
-          </div>
-          <div className="flex gap-4 items-center ">
-            <Horror />
-
-            <p className="overflow-hidden text-black truncate font-helvetica text-lg font-bold leading-tight">
-              Аймшгийн
-            </p>
-          </div>
-          <div className="flex gap-4 items-center ">
-            <Horror1 />
-
-            <p className="overflow-hidden text-black truncate font-helvetica text-lg font-bold leading-tight">
-              Триллер
-            </p>
-          </div>
-          <div className="flex gap-4 items-center ">
-            <Avangard />
-
-            <p className="overflow-hidden text-black truncate font-helvetica text-lg font-bold leading-tight">
-              Авангард
-            </p>
-          </div>
-          <div className="flex gap-4 items-center ">
-            <Funny />
-
-            <p className="overflow-hidden text-black truncate font-helvetica text-lg font-bold leading-tight">
-              Инээдмийн
-            </p>
-          </div>
-          <div className="flex gap-4 items-center ">
-            <Kino />
-
   // Жанр сонголт хийх state
   const [selectedGenre, setSelectedGenre] = useState<string | null>(null);
 
@@ -101,7 +56,6 @@ const MovieCard = ({
     { name: "Авангард", icon: <Avangard />, value: "Avangard" },
     { name: "Инээдмийн", icon: <Funny />, value: "Comedy" },
   ];
-
 
   return (
     <div className="flex justify-center pb-10 px-4 lg:px-0">
@@ -149,17 +103,15 @@ const MovieCard = ({
                     key={data._id}
                     className="grid rounded-xl shadow-md hover:shadow-lg duration-300 cursor-pointer bg-slate-100 flex-col"
                   >
+                    <img
+                      src={data?.imageUrl}
+                      alt={data.title}
+                      className="rounded-t-xl justify-center h-[240px] w-full object-cover"
+                    />
                     <Link
                       href={`/movies/${data._id}`}
                       className="group p-5 grid z-10"
                     >
-                      <img
-                        src={`${data?.imageUrl}`}
-                        width="360"
-                        height="200"
-                        className="rounded-t-xl justify-center h-[240px] grid object-cover"
-                        alt={data.title}
-                      />
                       <div className="group gap-4">
                         <div className="flex justify-between items-center gap-2">
                           <span className="group-hover:text-[#F8941E] text-6 font-bold md:text-2xl line-clamp-2 duration-300">
