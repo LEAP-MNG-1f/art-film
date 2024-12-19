@@ -85,7 +85,7 @@ const MovieCard = ({
                       />
                       <div className="group gap-4">
                         <div className="flex justify-between items-center gap-2">
-                          <span className="group-hover:text-[#F8941E] text-6 font-bold md:text-2xl line-clamp-2 duration-300">
+                          <span className="group-hover:text-[#F8941E] text-6 font-bold md:text-xl line-clamp-2 duration-300">
                             {data?.title}
                           </span>
                           <span className="flex justify-center items-center gap-2">
