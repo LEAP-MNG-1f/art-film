@@ -10,6 +10,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { MdBorderAll } from "react-icons/md";
 import { GiCrimeSceneTape } from "react-icons/gi";
+import { GiMaterialsScience } from "react-icons/gi";
 type Movie = {
   _id: string;
   title: string;
@@ -53,7 +54,11 @@ const MovieCard = ({
     { name: "Романс", icon: <Romans />, value: "Romance" },
     { name: "Аймшгийн", icon: <Horror />, value: "Horror" },
     { name: "Триллер", icon: <Horror1 />, value: "Thriller" },
-    { name: "Авангард", icon: <Avangard />, value: "Avangard" },
+    {
+      name: "Шинжлэх ухаан",
+      icon: <GiMaterialsScience className="w-[25px] h-[24px] text-[#F8941E]" />,
+      value: "Sci-Fi",
+    },
     { name: "Инээдмийн", icon: <Funny />, value: "Comedy" },
     {
       name: "Гэмт Хэрэг",
