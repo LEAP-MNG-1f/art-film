@@ -135,7 +135,6 @@ const MovieDetail = ({ movieData }: { movieData: Movie | null }) => {
               </p>
             </div>
             <p>{loremText}</p>
-            <p>sda</p>
           </div>
         </div>
       </div>
