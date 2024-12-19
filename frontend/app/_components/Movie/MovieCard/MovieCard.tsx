@@ -8,7 +8,7 @@ import {
   StarIcon,
 } from "@/public/Icons/Icons";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { BsChevronRight } from "react-icons/bs";
 
 type Movie = {
@@ -35,6 +35,7 @@ const MovieCard = ({
   limit?: number;
 }) => {
   const skeletonCards = Array.from({ length: 8 }, (_, i) => i);
+
 
   return (
     <div className="flex justify-center pb-10 px-4 lg:px-0">
@@ -80,24 +81,50 @@ const MovieCard = ({
           <div className="flex gap-4 items-center ">
             <Kino />
 
-            <p className="overflow-hidden text-black truncate font-helvetica text-lg font-bold leading-tight">
-              Романс
-            </p>
-          </div>
-        </div>
-        <div className="flex justify-between h-[44px] w-full">
-          <p className="text-black font-roboto-condensed text-[32px] flex items-center font-semibold leading-[24px]">
-            КИНО
-          </p>
-          <Link href="/movies" className="flex gap-1 items-center">
-            <p className="text-black font-roboto text-[14px] font-normal leading-[24px]">
-              БҮГДИЙГ ХАРАХ
-            </p>
-            <div>
-              <BsChevronRight className="text-[#F8941E]" />
+  // Жанр сонголт хийх state
+  const [selectedGenre, setSelectedGenre] = useState<string | null>(null);
+
+  // Сонгосон жанртай кинонуудад фильтэр хийх
+  const filteredMovies = selectedGenre
+    ? moviesData.filter((movie) => movie.genre.includes(selectedGenre))
+    : moviesData;
+
+  // Жанрын сонголт хийх логик
+  const genres = [
+    { name: "Романс", icon: <Romans />, value: "Romance" },
+    { name: "Аймшгийн", icon: <Horror />, value: "Horror" },
+    { name: "Триллер", icon: <Horror1 />, value: "Thriller" },
+    { name: "Авангард", icon: <Avangard />, value: "Avangard" },
+    { name: "Инээдмийн", icon: <Funny />, value: "Comedy" },
+    // { name: "Роман", icon: <Kino />, value: "Romance" }, // Давхар Романс байна уу
+  ];
+
+
+  return (
+    <div className="flex justify-center pb-10 px-4 lg:px-0">
+      <div className="max-w-[1180px] lg:w-[1180px] flex flex-col gap-4">
+        {/* Genre selection */}
+        <div className="flex justify-between flex-wrap mb-6">
+          {genres.map((genre) => (
+            <div
+              key={genre.value}
+              className={`flex gap-4 items-center cursor-pointer ${
+                selectedGenre === genre.value ? "text-[#F8941E]" : "text-black"
+              }`}
+              onClick={() =>
+                setSelectedGenre(
+                  genre.value === selectedGenre ? null : genre.value
+                )
+              } // Toggle genre filter
+            >
+              {genre.icon}
+              <p className="overflow-hidden truncate font-helvetica text-lg font-bold leading-tight hover:text-[#F8941E]">
+                {genre.name}
+              </p>
             </div>
-          </Link>
+          ))}
         </div>
+
         <div className="max-w-[1180px]">
           <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 py-4">
             {isLoading
@@ -114,13 +141,13 @@ const MovieCard = ({
                     </div>
                   </div>
                 ))
-              : moviesData.slice(0, limit).map((data) => (
+              : filteredMovies.slice(0, limit).map((data) => (
                   <div
                     key={data._id}
                     className="grid rounded-xl shadow-md hover:shadow-lg duration-300 cursor-pointer bg-slate-100 flex-col"
                   >
                     <Link
-                      href={`/movies/${data?._id}`}
+                      href={`/movies/${data._id}`}
                       className="group p-5 grid z-10"
                     >
                       <img

@@ -21,7 +21,7 @@ function ArticleCard({
           <p className="text-black font-roboto-condensed text-[32px] font-semibold leading-[24px]">
             НИЙТЛЭЛ
           </p>
-          <Link href="/blogs" className="font-bold flex gap-1 items-center">
+          <Link href="/articles" className="font-bold flex gap-1 items-center">
             <p className="text-black font-roboto text-[14px] font-normal leading-[24px]">
               БҮГДИЙГ ХАРАХ
             </p>
