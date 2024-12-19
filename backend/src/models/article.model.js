@@ -4,8 +4,13 @@ import mongoosePaginate from "mongoose-paginate-v2";
 const ArticleSchema = new mongoose.Schema({
   title: { type: String, required: true },
   content: { type: String, required: true },
-  image: { type: String },
-  author: { type: mongoose.Schema.Types.ObjectId, ref: "Users" },
+  image: { type: String, required: true },
+  comments: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Comment",
+    },
+  ],
   createdAt: { type: Date, default: Date.now },
 });
 

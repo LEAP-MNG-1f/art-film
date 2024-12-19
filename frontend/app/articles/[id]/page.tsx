@@ -4,10 +4,22 @@ import MovieDetail from "@/app/_components/Movie/MovieDetail";
 import { useParams } from "next/navigation";
 import ArticleDetail from "@/app/_components/Article/ArticleDetail";
 
-type Article = {
+type Comment = {
+  _id: string;
+  content: string;
+  authorName: string;
+  likes: number;
+  createdAt: string;
+  replies: Comment[]; // Nested replies
+};
+
+export type Article = {
   _id: string;
   title: string;
-  imageUrl: string;
+  content: string;
+  image: string;
+  comments: Comment[];
+  createdAt: Date;
 };
 
 const Page = () => {
@@ -23,7 +35,9 @@ const Page = () => {
 
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://localhost:9000/api/movies/${id}`);
+        const response = await fetch(
+          `${process.env.NEXT_PUBLIC_BACKEND_URL}/articles/${id}`
+        );
 
         if (!response.ok) {
           const errorText = await response.text();

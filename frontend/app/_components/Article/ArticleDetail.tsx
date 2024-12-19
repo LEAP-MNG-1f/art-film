@@ -1,10 +1,23 @@
 import Footer from "../HomePage/Footer";
 import React from "react";
 import Header from "./Header";
+
+type Comment = {
+  _id: string;
+  content: string;
+  authorName: string;
+  likes: number;
+  createdAt: string;
+  replies: Comment[]; // Nested replies
+};
+
 type Article = {
   _id: string;
   title: string;
-  imageUrl: string;
+  content: string;
+  image: string;
+  comments: Comment[];
+  createdAt: Date;
 };
 
 const ArticleDetail = ({ articleData }: { articleData: Article | null }) => {
@@ -18,7 +31,7 @@ const ArticleDetail = ({ articleData }: { articleData: Article | null }) => {
       <div className="max-w-[1180px] flex items-center flex-col">
         <div className="max-w-[1180px]">
           <p className="text-black text-center font-['Helvetica Neue'] text-4xl font-bold leading-[42px] pb-[32px]">
-            БОЛДООГИЙН САНАЛ БОЛГОХ ШИЛДЭГ 15-Н КИНО
+            {articleData?.title}
           </p>
           <div className="p-8 border border-t-[#6B6B6B] border-r-white border-l-white border-b-white flex flex-col gap-8">
             <p>
@@ -29,49 +42,17 @@ const ArticleDetail = ({ articleData }: { articleData: Article | null }) => {
               гээд амиа хорлолтод хөтөлдөг олон хүчин зүйлс, нөхцөл байдлын
               тухай үзэгч бид киноны туршид олж мэдэх юм.
             </p>
-            {articleData.imageUrl && (
+            {articleData.image && (
               <img
-                src={articleData.imageUrl}
+                src={articleData.image}
                 alt={articleData.title || "Movie Poster"}
                 className="movie-poster border rounded-xl"
               />
             )}
-            <p>
-              Саяхныг хүртэл баримтат киног баримтат нэвтрүүлгээс ялгаж байдаг
-              уран сайхны шийдэл, кино хэл гэх зүйлс манай баримтат кинонуудад
-              дутагддаг байжээ. Харин “Хүрд” киноны хувьд баримтат киноны
-              монолог ихтэй, хэт хатуу хөндий байдлыг эвдэж чадсан, амьд мэдрэг
-              бүтээл болсон байлаа. Угаас ийм “амьд” үзэл санааг хүргэж буй кино
-              амьд мэдрэг байхгүй гээд яах билээ? Ухарч буй цаг, овооны дэргэд
-              аажим үзэгдэх хүмүүсийн царай төрх, эгэл бор ахуйн зураглал
-              зэргээс эхсүүлээд үзэгчтэйгээ гүн гүнзгий харилцаа үүсгэх шийдлээ
-              маш гоё олжээ. Мөн хамгийн авууштай нэг зүйл нь, кино багийнхан
-              дүрүүдийнхээ хувийн орон зайг маш сайн хүндэтгэсэн явдал байв.
-              Амиа хорлолтыг биеэр гэрчилж туулсан хүмүүсийн чин үнэн мэдрэмж
-              бүхий яриа л сонстож байлаа. Харин тэдний амьдралыг хэт их ухаж
-              төнхсөн, хэрэгцээгүй шалдар булдар асуултаар булсан зүйл байгаагүй
-              нь их таалагдлаа. Уран бүтээлчид нь киноны дүрүүдээ тас
-              хамгаалаад, хэрийн үзэгчид шүүн чичлэх боломж өгсөнгүй, үүгээрээ
-              маш эмзэг сэдвийг туйлын ёс зүйтэй хөнджээ гэж хэлмээр байна.
-              Мэргэжлийн сэтгүүлч хүн зохиож, найруулсны үр дүн биз ээ.
-              Хүмүүсийн амиа хорлох нөхцөл байдал, шалтгаан, хүчин зүйлсийг нээн
-              илрүүлэх явцад нийгэм дэх хамгийн ужгирсан асуудлуудын мөн чанар
-              давхар нээгдэж байгааг “Хүрд” киноноос анзаарч болох юм. Нийгэмд
-              дангаар оршдог асуудал гэж байхгүй. Нийгмийн асуудлууд бүгд өөр
-              хоорондоо холбоотой. Эдийн засаг, нийгэм хөрвөөж хувьсах бүрт хэн
-              нэгэн хоолноосоо салж ядуурал руу унана, ядуурлаас ялгаварлан
-              гадуурхалт болоод итгэл найдварын мухардал, мухардсан итгэл
-              найдвараас архидалт, архидалтаас гэр бүлийн дотоод асуудал, гэр
-              бүлийн асуудлаас хувь хүний сэтгэлзүйн асуудал, сэтгэлзүйн
-              асуудлаас амиа хорлолт гэхчилэн нийгмийн асуудлууд өөр хоорондоо
-              тас сугадалцаад тамын тойрог шиг эргэлдэж байдаг. Амиа хорлолт ч
-              бас дангаар оршдог асуудал биш. Нийгмийн болоод хүний хувийн
-              амьдралын бусад асуудлуудтай тас зууралдсан байгааг “Хүрд”
-              киноноос харж болох юм.
-            </p>
-            {articleData.imageUrl && (
+            <p>{articleData?.content}</p>
+            {articleData.image && (
               <img
-                src={articleData.imageUrl}
+                src={articleData.image}
                 alt={articleData.title || "Movie Poster"}
                 className="movie-poster border rounded-xl"
               />
@@ -99,6 +80,7 @@ const ArticleDetail = ({ articleData }: { articleData: Article | null }) => {
           </div>
         </div>
       </div>
+      <div className="w-full h-96 border border-red-400">code here</div>
       <Footer />
     </div>
   );

@@ -46,6 +46,53 @@ export const MovieCreate = ({
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+  // Өөрчлөлт оруулах хэсэг
+  const handleSearchMovie = async () => {
+    // searchTitle state-ийг input-аас авах function нэмнэ
+    const searchInput = document.querySelector(
+      'input[name="title"]'
+    ) as HTMLInputElement;
+    const searchTitleValue = searchInput?.value;
+
+    if (!searchTitleValue) {
+      toast.error("Киноны нэрээ оруулна уу");
+      return;
+    }
+
+    try {
+      const response = await fetch(
+        `http://localhost:9000/api/omdb/movie?title=${encodeURIComponent(
+          searchTitleValue
+        )}`
+      );
+
+      const result = await response.json();
+
+      if (result.movie) {
+        const movie = result.movie;
+        setFormData({
+          title: movie.Title,
+          releaseYear: movie.Year,
+          genre: movie.Genre,
+          writer: movie.Writer,
+          director: movie.Director,
+          rating: movie.imdbRating
+            ? (Math.round(parseFloat(movie.imdbRating) * 10) / 10).toString()
+            : "",
+          trailerUrl: "",
+          imageUrl: movie.Poster || "",
+          description: movie.Plot,
+        });
+        toast.success("Киноны мэдээлэл амжилттай олдлоо!");
+      } else {
+        toast.error(result.error || "Кино олдсонгүй");
+      }
+    } catch (error) {
+      console.error("Error searching movie:", error);
+      toast.error("Кино хайхад алдаа гарлаа");
+    }
+  };
+
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
@@ -96,14 +143,27 @@ export const MovieCreate = ({
           className="p-8 grid md:grid-cols-2 gap-6 bg-gray-50"
         >
           <div className="space-y-5">
-            <InputField
-              label="Киноны нэр"
-              type="text"
-              name="title"
-              value={formData.title}
-              placeholder="Киноны нэрээ оруулна уу"
-              onChange={handleChange}
-            />
+            <div className="flex space-x-2">
+              <InputField
+                label="Киноны нэр"
+                type="text"
+                name="title"
+                value={formData.title}
+                placeholder="Киноны нэрээ оруулна уу"
+                onChange={handleChange}
+                className="flex-grow"
+              />
+              <div className="flex items-end">
+                <button
+                  type="button"
+                  onClick={handleSearchMovie}
+                  className="px-4 py-2.5 bg-blue-500 text-white rounded-lg 
+                             hover:bg-blue-600 transition-all duration-300"
+                >
+                  Хайх
+                </button>
+              </div>
+            </div>
             <InputField
               label="Гарсан он"
               type="number"
@@ -221,6 +281,7 @@ const InputField = ({
   min,
   max,
   step,
+  className,
 }: {
   label: string;
   type: string;
@@ -231,8 +292,9 @@ const InputField = ({
   min?: string;
   max?: string;
   step?: string;
+  className?: string;
 }) => (
-  <div>
+  <div className={className}>
     <label className="block text-sm font-medium text-gray-700 mb-2">
       {label}
     </label>
