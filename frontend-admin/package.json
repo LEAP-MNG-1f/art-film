@@ -14,7 +14,11 @@
     "next": "15.0.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-toastify": "^10.0.6"
+    "react-toastify": "^10.0.6",
+    "slate": "^0.112.0",
+    "slate-history": "^0.110.3",
+    "slate-hotkeys": "^0.2.11",
+    "slate-react": "^0.112.0"
   },
   "devDependencies": {
     "@types/node": "^20",
