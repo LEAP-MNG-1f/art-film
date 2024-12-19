@@ -103,15 +103,15 @@ const MovieCard = ({
                     key={data._id}
                     className="grid rounded-xl shadow-md hover:shadow-lg duration-300 cursor-pointer bg-slate-100 flex-col"
                   >
-                    <img
-                      src={data?.imageUrl}
-                      alt={data.title}
-                      className="rounded-t-xl justify-center h-[240px] w-full object-cover"
-                    />
                     <Link
                       href={`/movies/${data._id}`}
                       className="group p-5 grid z-10"
                     >
+                      <img
+                        src={data?.imageUrl}
+                        alt={data.title}
+                        className="rounded-t-xl justify-center h-[240px] w-full object-cover"
+                      />
                       <div className="group gap-4">
                         <div className="flex justify-between items-center gap-2">
                           <span className="group-hover:text-[#F8941E] text-6 font-bold md:text-2xl line-clamp-2 duration-300">
