@@ -65,7 +65,7 @@ export const ArticleCreate = ({
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-      <div className="bg-white w-full max-w-4xl rounded-2xl shadow-2xl overflow-hidden">
+      <div className="bg-white w-full max-w-3xl rounded-2xl shadow-2xl overflow-hidden">
         <div className="bg-orange-400 text-white p-5">
           <h2 className="text-2xl font-bold text-center">
             {articleData ? "Edit Article" : "Create New Article"}
@@ -74,7 +74,7 @@ export const ArticleCreate = ({
 
         <form
           onSubmit={handleSubmit}
-          className="p-8 grid md:grid-cols-2 gap-6 bg-gray-50"
+          className="p-8 flex flex-col gap-6 bg-gray-50"
         >
           <div className="space-y-5">
             <InputField
@@ -105,6 +105,8 @@ export const ArticleCreate = ({
                 onChange={handleChange}
               />
             </div>
+          </div>
+          <div className="space-y-5">
             <InputField
               label="Image URL"
               type="url"
@@ -114,7 +116,6 @@ export const ArticleCreate = ({
               onChange={handleChange}
             />
           </div>
-
           <div className="col-span-2 flex justify-end space-x-4 mt-4">
             <button
               type="button"
@@ -124,7 +125,7 @@ export const ArticleCreate = ({
                          focus:outline-none focus:ring-2 focus:ring-gray-400 
                          transition-all duration-300"
             >
-              Cancel
+              Цуцлах
             </button>
             <button
               type="submit"
@@ -133,7 +134,7 @@ export const ArticleCreate = ({
                          focus:outline-none focus:ring-2 focus:ring-orange-600 
                          transition-all duration-300"
             >
-              {articleData ? "Update" : "Create"}
+              {articleData ? "Шинэчилэх" : "Үүсгэх"}
             </button>
           </div>
         </form>

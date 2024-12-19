@@ -2,58 +2,42 @@
 import React, { useEffect, useState } from "react";
 
 const DreamersDayCard = () => {
-  // State to track the remaining time
-  const [timeLeft, setTimeLeft] = useState<{
-    days: number;
-    hours: number;
-    minutes: number;
-    seconds: number;
-  }>(() => calculateTimeLeft());
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
 
-  // Function to calculate remaining time to a specific future moment
-  function calculateTimeLeft() {
-    // Create a target date exactly 4 days from now
-    const targetDate = new Date();
-    targetDate.setDate(targetDate.getDate() + 4);
+  useEffect(() => {
+    function calculateTimeLeft() {
+      const targetDate = new Date();
+      targetDate.setDate(targetDate.getDate() + 4);
+      targetDate.setHours(0, 0, 0, 0);
+      const difference = targetDate.getTime() - new Date().getTime();
 
-    // Set the time to exactly midnight (00:00:00)
-    targetDate.setHours(0, 0, 0, 0);
+      if (difference <= 0) {
+        return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+      }
 
-    const difference = targetDate.getTime() - new Date().getTime();
-
-    if (difference <= 0) {
-      return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+      return {
+        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((difference / (1000 * 60)) % 60),
+        seconds: Math.floor((difference / 1000) % 60),
+      };
     }
 
-    return {
-      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-      hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-      minutes: Math.floor((difference / (1000 * 60)) % 60),
-      seconds: Math.floor((difference / 1000) % 60),
-    };
-  }
-
-  // Effect to update countdown every second
-  useEffect(() => {
-    // Exit if time is already up
-    if (
-      timeLeft.days === 0 &&
-      timeLeft.hours === 0 &&
-      timeLeft.minutes === 0 &&
-      timeLeft.seconds === 0
-    )
-      return;
-
-    // Set up interval to update countdown
-    const timer = setInterval(() => {
+    const updateTimer = () => {
       setTimeLeft(calculateTimeLeft());
-    }, 1000);
+    };
 
-    // Clean up interval
+    updateTimer();
+    const timer = setInterval(updateTimer, 1000);
+
     return () => clearInterval(timer);
   }, []);
 
-  // Render countdown or "Time's up" message
   const renderCountdown = () => {
     const { days, hours, minutes, seconds } = timeLeft;
 
@@ -66,7 +50,7 @@ const DreamersDayCard = () => {
     }
 
     return (
-      <div className="flex items-center  gap-4">
+      <div className="flex items-center gap-4">
         <div className="flex flex-col items-center border border-white px-2 rounded-lg backdrop-blur-md">
           <div className="text-4xl font-semibold text-white">{days}</div>
           <div className="text-lg text-white">өдөр</div>

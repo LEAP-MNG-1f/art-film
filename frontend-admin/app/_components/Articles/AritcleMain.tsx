@@ -51,20 +51,18 @@ export const AritcleMain = () => {
   return (
     <div className="flex flex-col gap-8">
       <ArticleHeader />
-      <div className=" border-2 mx-10 px-10 py-10 shadow-2xl rounded-lg">
-        <div className="flex flex-col gap-10 h-[800px] overflow-scroll ">
-          <ArticleList
-            articleData={articleData}
-            handleEdit={handleEdit}
-            handleDelete={handleDelete}
+      <div className="flex flex-col gap-10 h-[800px] mx-10 overflow-scroll ">
+        <ArticleList
+          articleData={articleData}
+          handleEdit={handleEdit}
+          handleDelete={handleDelete}
+        />
+        {selectedArticle && (
+          <ArticleCreate
+            closeDialog={handleCloseDialog}
+            articleData={selectedArticle}
           />
-          {selectedArticle && (
-            <ArticleCreate
-              closeDialog={handleCloseDialog}
-              articleData={selectedArticle}
-            />
-          )}
-        </div>
+        )}
       </div>
     </div>
   );
