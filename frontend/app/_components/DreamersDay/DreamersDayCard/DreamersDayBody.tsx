@@ -13,9 +13,7 @@ const DreamersDayBody = () => {
   return (
     <div className="flex justify-center">
       <div className="w-[1180px] flex flex-col gap-10">
-        <div className="flex justify-center items-center">
-          <h1 className="text-[32px] font-bold">DREAMERS' DAY</h1>
-        </div>
+      
         <img
           className="w-[1180px] h-[570px] rounded-lg"
           src="https://images.hdqwalls.com/wallpapers/godzilla-minus-one-4k-d9.jpg"
