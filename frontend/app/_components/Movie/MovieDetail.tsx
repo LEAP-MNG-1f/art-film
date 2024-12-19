@@ -85,7 +85,7 @@ const MovieDetail = ({ movieData }: { movieData: Movie | null }) => {
                     <div className="flex items-center gap-2">
                       <HiOutlineArrowTrendingUp className="w-6 h-6" />
                       <p className="text-[#000] font-['Roboto'] text-[18px] font-normal leading-[32px]">
-                        sadsdadsdd
+                        900k+
                       </p>
                     </div>
                   </div>
