@@ -63,7 +63,7 @@ const ArticleDetail = ({ articleData }: { articleData: Article | null }) => {
           </div>
         </div>
       </div>
-      <div className="w-full h-96 border border-red-400">code here</div>
+      
       <Footer />
     </div>
   );
