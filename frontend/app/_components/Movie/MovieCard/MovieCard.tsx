@@ -11,7 +11,6 @@ import Link from "next/link";
 import React from "react";
 import { BsChevronRight } from "react-icons/bs";
 
-
 type Movie = {
   _id: string;
   title: string;
@@ -54,28 +53,28 @@ const MovieCard = ({
             <Horror />
 
             <p className="overflow-hidden text-black truncate font-helvetica text-lg font-bold leading-tight">
-            Аймшгийн
+              Аймшгийн
             </p>
           </div>
           <div className="flex gap-4 items-center ">
             <Horror1 />
 
             <p className="overflow-hidden text-black truncate font-helvetica text-lg font-bold leading-tight">
-            Триллер
+              Триллер
             </p>
           </div>
           <div className="flex gap-4 items-center ">
             <Avangard />
 
             <p className="overflow-hidden text-black truncate font-helvetica text-lg font-bold leading-tight">
-            Авангард
+              Авангард
             </p>
           </div>
           <div className="flex gap-4 items-center ">
             <Funny />
 
             <p className="overflow-hidden text-black truncate font-helvetica text-lg font-bold leading-tight">
-            Инээдмийн
+              Инээдмийн
             </p>
           </div>
           <div className="flex gap-4 items-center ">
@@ -120,17 +119,17 @@ const MovieCard = ({
                     key={data._id}
                     className="grid rounded-xl shadow-md hover:shadow-lg duration-300 cursor-pointer bg-slate-100 flex-col"
                   >
-                    <img
-                      src={`${data?.imageUrl}`}
-                      width="360"
-                      height="200"
-                      className="rounded-t-xl justify-center h-[240px] grid object-cover"
-                      alt={data.title}
-                    />
                     <Link
                       href={`/movies/${data?._id}`}
                       className="group p-5 grid z-10"
                     >
+                      <img
+                        src={`${data?.imageUrl}`}
+                        width="360"
+                        height="200"
+                        className="rounded-t-xl justify-center h-[240px] grid object-cover"
+                        alt={data.title}
+                      />
                       <div className="group gap-4">
                         <div className="flex justify-between items-center gap-2">
                           <span className="group-hover:text-[#F8941E] text-6 font-bold md:text-2xl line-clamp-2 duration-300">
