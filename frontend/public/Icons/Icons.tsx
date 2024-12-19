@@ -417,7 +417,7 @@ export const Horror = () => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clip-path="url(#clip0_7501_3050)">
+      <g clipPath="url(#clip0_7501_3050)">
         <path
           fillRule="evenodd"
           clipRule="evenodd"
@@ -505,7 +505,7 @@ export const Avangard = () => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clip-path="url(#clip0_7501_3056)">
+      <g clipPath="url(#clip0_7501_3056)">
         <path
           fillRule="evenodd"
           clipRule="evenodd"
