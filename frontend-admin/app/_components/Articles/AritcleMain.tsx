@@ -11,7 +11,9 @@ export const AritcleMain = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch("http://localhost:9000/api/articles");
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/articles`
+      );
       const data = await response.json();
       setArticleData(data.data);
     } catch (error) {
@@ -22,9 +24,12 @@ export const AritcleMain = () => {
 
   const handleDelete = async (id: string) => {
     try {
-      const response = await fetch(`http://localhost:9000/api/articles/${id}`, {
-        method: "DELETE",
-      });
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/articles/${id}`,
+        {
+          method: "DELETE",
+        }
+      );
       if (response.ok) {
         setArticleData((prevData) =>
           prevData.filter((article) => article._id !== id)

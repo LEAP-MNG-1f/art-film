@@ -59,8 +59,8 @@ export const DreamerdayCreate = ({
     try {
       const method = eventData ? "PUT" : "POST";
       const url = eventData
-        ? `http://localhost:9000/api/dreamersday/${eventData._id}`
-        : "http://localhost:9000/api/dreamersday";
+        ? `${process.env.NEXT_PUBLIC_BACKEND_URL}/dreamersday/${eventData._id}`
+        : `${process.env.NEXT_PUBLIC_BACKEND_URL}/dreamersday`;
 
       const response = await fetch(url, {
         method,

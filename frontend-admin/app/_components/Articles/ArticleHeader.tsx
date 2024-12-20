@@ -30,7 +30,9 @@ export const ArticleHeader = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch("http://localhost:9000/api/articles");
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/articles`
+      );
       const data = await response.json();
       setArticles(data.data);
     } catch (error) {

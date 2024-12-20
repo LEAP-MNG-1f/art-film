@@ -27,7 +27,9 @@ export const DreamerdayMain = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch("http://localhost:9000/api/dreamersday");
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/dreamersday`
+      );
       const data = await response.json();
       setDreamersDay(data.data);
     } catch (error) {
@@ -49,7 +51,7 @@ export const DreamerdayMain = () => {
   const handleDelete = async (id: string) => {
     try {
       const response = await fetch(
-        `http://localhost:9000/api/dreamersday/${id}`,
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/dreamersday/${id}`,
         {
           method: "DELETE",
         }
