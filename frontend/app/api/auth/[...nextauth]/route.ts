@@ -63,9 +63,7 @@
 // export { handler as GET, handler as POST };
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
-import { MongoDBAdapter } from "@next-auth/mongodb-adapter";
 // import clientPromise from "../../../../lib/mongodb";
-import User from "../../../../../backend/src/models/user.model.js";
 import axios from "axios";
 
 // Extend the default session types

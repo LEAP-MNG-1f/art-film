@@ -5,13 +5,6 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Loader from "./_components/Utils/Loader";
 import { SessionProvider } from "next-auth/react";
-import {
-  ClerkProvider,
-  SignedIn,
-  SignedOut,
-  SignInButton,
-  UserButton,
-} from "@clerk/nextjs";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -48,20 +41,18 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ClerkProvider>
-          <SessionProvider>
-            <div>
-              {/* <SignedOut>
+        <SessionProvider>
+          <div>
+            {/* <SignedOut>
                 <SignInButton />
               </SignedOut>
               <SignedIn>
                 <UserButton />
               </SignedIn> */}
-              {loading && <Loader />}
-              {children}
-            </div>
-          </SessionProvider>
-        </ClerkProvider>
+            {loading && <Loader />}
+            {children}
+          </div>
+        </SessionProvider>
       </body>
     </html>
   );

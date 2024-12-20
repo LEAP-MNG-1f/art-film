@@ -14,7 +14,7 @@ type Movie = {
   createdAt: Date;
 };
 
-const MoviesList = ({
+export const MoviesList = ({
   movieData,
   handleEdit,
   handleDelete,
