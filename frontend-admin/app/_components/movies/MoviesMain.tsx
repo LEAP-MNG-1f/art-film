@@ -1,9 +1,9 @@
 "use client";
 import { useEffect, useState } from "react";
 import { MoviesHeader } from "./MoviesHeader";
-import { MovieCreate } from "./MovieCreate";
 import { toast } from "react-toastify";
 import MoviesList from "./MoviesList";
+import { MovieCreate } from "@/app/_components/Movies/MovieCreate";
 
 export type Movie = {
   _id: string;

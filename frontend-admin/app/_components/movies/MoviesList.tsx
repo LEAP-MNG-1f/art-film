@@ -1,5 +1,18 @@
-import { Movie } from "./MoviesMain";
 import { Pencil, Trash2, Star } from "lucide-react";
+
+type Movie = {
+  _id: string;
+  title: string;
+  releaseYear: number;
+  genre: string[];
+  writer: string[];
+  director: string[];
+  rating: number;
+  trailerUrl?: string;
+  imageUrl: string;
+  relatedMovies: string[];
+  createdAt: Date;
+};
 
 const MoviesList = ({
   movieData,

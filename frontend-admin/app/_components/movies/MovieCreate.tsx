@@ -2,8 +2,21 @@
 import { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Movie } from "./MoviesMain";
 import { SearchSVG } from "@/public/Icons/SvgFiles";
+
+type Movie = {
+  _id: string;
+  title: string;
+  releaseYear: number;
+  genre: string[];
+  writer: string[];
+  director: string[];
+  rating: number;
+  trailerUrl?: string;
+  imageUrl: string;
+  relatedMovies: string[];
+  createdAt: Date;
+};
 
 export const MovieCreate = ({
   closeDialog,
