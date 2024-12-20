@@ -6,7 +6,7 @@ import mongoose from "mongoose";
 export const getMovies = catchAsync(async (req, res) => {
   const {
     page = 1,
-    limit = 10,
+    limit = 40,
     sort = "createdAt",
     order = "desc",
   } = req.query;
