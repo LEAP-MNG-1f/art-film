@@ -1,166 +1,185 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { DreamersDay } from "./DreamdayMain";
 
-export const DreamerdayCreate = () => {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+export const DreamerdayCreate = ({
+  closeDialog,
+  eventData,
+}: {
+  closeDialog: () => void;
+  eventData?: DreamersDay;
+}) => {
+  const [formData, setFormData] = useState({
+    title: "",
+    description: "",
+    location: "",
+    imageUrl: "",
+    organizer: "",
+    isActive: false,
+    time: "",
+  });
 
-  const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-    if (file) {
-      const imageURL = URL.createObjectURL(file);
-      setSelectedImage(imageURL);
+  useEffect(() => {
+    console.log("Editing event data:", eventData);
+    if (eventData) {
+      setFormData({
+        title: eventData.title,
+        description: eventData.description,
+        location: eventData.location,
+        imageUrl: eventData.imageUrl,
+        organizer: eventData.organizer,
+        isActive: Boolean(eventData.isActive),
+        time: eventData.time,
+      });
+    }
+  }, [eventData]);
+
+  const handleChange = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = event.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const finalData = {
+      title: formData.title,
+      description: formData.description,
+      time: formData.time,
+      location: formData.location,
+      imageUrl: formData.imageUrl,
+      organizer: formData.organizer,
+      isActive: formData.isActive,
+    };
+
+    try {
+      const method = eventData ? "PUT" : "POST";
+      const url = eventData
+        ? `http://localhost:9000/api/dreamersday/${eventData._id}`
+        : "http://localhost:9000/api/dreamersday";
+
+      const response = await fetch(url, {
+        method,
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(finalData),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        console.error("Server error:", errorData);
+        toast.error(
+          "Алдаа гарлаа: " + (errorData?.message || "Нэмэлт мэдээлэл байхгүй")
+        );
+      } else {
+        toast.success(
+          eventData ? "Эвент амжилттай шинэчлэгдлээ!" : "Шинэ эвент нэмэгдлээ!"
+        );
+        closeDialog();
+      }
+    } catch (error) {
+      console.log("Алдаа:", error);
+      toast.error("Системийн алдаа.");
     }
   };
 
-  const [content, setContent] = useState<string>("");
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Article Submitted:", content);
-    setContent("");
-  };
-
   return (
-    <div className="flex flex-col bg-slate-200 rounded-2xl gap-5 shadow-xl m-10">
-      <div className="flex flex-col justify-between bg-white shadow rounded-t-2xl px-10 py-5">
-        <label
-          htmlFor="image"
-          className="text-center block text-lg font-semibold text-gray-800 mb-2"
-        >
-          Постэр зураг
-        </label>
-
-        {selectedImage && (
-          <div className="mb-4 flex justify-center">
-            <img
-              src={selectedImage}
-              alt="Selected preview"
-              className="max-w-full flex flex-col object-cover rounded-lg border border-slate-900 shadow-lg"
-            />
-          </div>
-        )}
-        <input
-          type="file"
-          id="image"
-          accept="image/*"
-          className="block w-full px-3 py-2 border border-slate-900 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-200 ease-in-out"
-          onChange={handleImageChange}
-        />
-      </div>
-      <div className="grid grid-cols-2 mb-10">
-        <div className="flex flex-col rounded-b-2xl px-10 gap-10">
-          <form className="flex flex-col gap-2">
-            <label htmlFor="name" className="block text-lg font-semibold ">
-              Киноны нэр:
-            </label>
-            <input
-              placeholder="Киноны нэрээ оруулна уу..."
-              type="text"
-              id="name"
-              className="mt-1 block w-full py-2 px-2 border-slate-900 rounded-md shadow-sm"
-            />
-          </form>
-
-          <form className="flex flex-col gap-2">
-            <label htmlFor="name" className="block text-lg font-semibold ">
-              Найруулагчийн нэр:
-            </label>
-            <input
-              placeholder="Найруулагчийн нэрээ оруулна уу..."
-              type="text"
-              id="name"
-              className="mt-1 block w-full py-2 px-2 border-slate-900 rounded-md shadow-sm"
-            />
-          </form>
-
-          <form className="flex flex-col gap-2">
-            <label htmlFor="price" className="block text-lg font-semibold ">
-              Тасалбарын үнэ:
-            </label>
-            <input
-              placeholder="Тоогоор оруулна уу..."
-              type="number"
-              id="price"
-              className="mt-1 block w-full py-2 px-2 border-slate-900 rounded-md shadow-sm"
-            />
-          </form>
-
-          <form className="flex flex-col gap-2">
-            <label htmlFor="dropdown" className="block text-lg font-semibold ">
-              Киноны жанр, төрөл зүйл:
-            </label>
-            <select
-              id="dropdown"
-              className="mt-1 block w-full py-2 px-2 border-slate-900 rounded-md shadow-sm"
-            >
-              <option value="">--Select an option--</option>
-              <option value="option1">Triller</option>
-              <option value="option2">Romantic</option>
-              <option value="option3">Horror</option>
-            </select>
-          </form>
-
-          <form className="flex flex-col gap-2">
-            <label htmlFor="language" className="block text-lg font-semibold ">
-              Зохион байгуулагдах өдөр:
-            </label>
-            <input
-              placeholder="Хадмал орчуулгын хэлийг оруулна уу..."
-              type="date"
-              id="language"
-              className="mt-1 block w-full py-2 px-2 border-slate-900 rounded-md shadow-sm"
-            />
-          </form>
-
-          <form className="flex flex-col gap-2">
-            <label htmlFor="language" className="block text-lg font-semibold ">
-              Эхлэх цаг (event):
-            </label>
-            <input
-              placeholder="Эхлэх цаг"
-              type="time"
-              id="language"
-              className="mt-1 block w-full py-2 px-2 border-slate-900 rounded-md shadow-sm"
-            />
-          </form>
-          <form className="flex flex-col gap-2">
-            <label htmlFor="location" className="block text-lg font-semibold ">
-              Байршил:
-            </label>
-            <input
-              placeholder="Байршилыг оруулна уу..."
-              type="text"
-              id="location"
-              className="mt-1 block w-full py-2 px-2 border-slate-900 rounded-md shadow-sm"
-            />
-          </form>
+    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+      <div className="bg-white w-full max-w-3xl rounded-2xl shadow-2xl overflow-hidden">
+        <div className="bg-orange-400 text-white p-5">
+          <h2 className="text-2xl font-bold text-center">
+            {eventData ? "Эвент засах" : "Шинэ эвент үүсгэх"}
+          </h2>
         </div>
 
         <form
-          className="flex flex-col justify-between pr-10"
           onSubmit={handleSubmit}
+          className="p-8 flex flex-col gap-6 bg-gray-50"
         >
-          <div className="mb-4 flex flex-col gap-2">
-            <label htmlFor="content" className="block text-lg font-semibold ">
-              Нийтлэл:
+          <InputField
+            label="Нэр"
+            type="text"
+            name="title"
+            value={formData.title}
+            placeholder="Эвентийн нэр оруулна уу"
+            onChange={handleChange}
+          />
+          <InputField
+            label="Тайлбар"
+            type="text"
+            name="description"
+            value={formData.description}
+            placeholder="Эвентийн тайлбар оруулна уу"
+            onChange={handleChange}
+          />
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Идэвхтэй эсэх
             </label>
-            <textarea
-              id="content"
-              className="w-full p-2 border border-gray-300 rounded-lg"
-              rows={25}
-              value={content}
-              onChange={(e) => setContent(e.target.value)}
-              placeholder="Киноны талаар сонирхолтой баримт, мэдээлэл оруулна уу..."
-              required
+            <input
+              type="checkbox"
+              name="isActive"
+              checked={formData.isActive} // Directly use the boolean value
+              onChange={(e) =>
+                setFormData((prev) => ({
+                  ...prev,
+                  isActive: e.target.checked, // Use boolean
+                }))
+              }
+              className="rounded-lg border-2 border-gray-300 px-3 py-2 focus:ring-2 focus:ring-indigo-200 outline-none transition-all duration-300"
             />
           </div>
 
-          <div className="flex justify-end mt-10">
+          <InputField
+            label="Байршил"
+            type="text"
+            name="location"
+            value={formData.location}
+            placeholder="Эвентийн байршил оруулна уу"
+            onChange={handleChange}
+          />
+          <InputField
+            label="Зохион байгуулагч"
+            type="text"
+            name="organizer"
+            value={formData.organizer}
+            placeholder="Зохион байгуулагчийн нэр оруулна уу"
+            onChange={handleChange}
+          />
+          <InputField
+            label="Огноо"
+            type="datetime-local"
+            name="time"
+            value={formData.time}
+            placeholder="Эвентийн огноо оруулна уу"
+            onChange={handleChange}
+          />
+          <InputField
+            label="Зураг"
+            type="url"
+            name="imageUrl"
+            value={formData.imageUrl}
+            placeholder="Эвентийн постерын зураг оруулна уу"
+            onChange={handleChange}
+          />
+          <div className="flex justify-end gap-4 mt-4">
+            <button
+              type="button"
+              onClick={closeDialog}
+              className="px-6 py-2 bg-gray-200 font-semibold text-gray-800 rounded-lg hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 transition-all duration-300"
+            >
+              Цуцлах
+            </button>
             <button
               type="submit"
-              className="px-5 py-2 rounded-lg text-white bg-orange-400 font-semibold hover:bg-orange-600"
+              className="px-6 py-2 bg-orange-400 text-white font-semibold rounded-lg hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-600 transition-all duration-300"
             >
-              Шинээр нэмэх
+              {eventData ? "Шинэчлэх" : "Үүсгэх"}
             </button>
           </div>
         </form>
@@ -168,3 +187,35 @@ export const DreamerdayCreate = () => {
     </div>
   );
 };
+
+const InputField = ({
+  label,
+  type,
+  name,
+  value,
+  placeholder,
+  onChange,
+}: {
+  label: string;
+  type: string;
+  name: string;
+  value: string;
+  placeholder: string;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+}) => (
+  <div>
+    <label className="block text-sm font-medium text-gray-700 mb-2">
+      {label}
+    </label>
+    <input
+      type={type}
+      name={name}
+      value={value}
+      placeholder={placeholder}
+      onChange={onChange}
+      className="w-full rounded-lg border-2 border-gray-300 px-3 py-2 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 outline-none transition-all duration-300"
+    />
+  </div>
+);
+
+export default DreamerdayCreate;

@@ -27,7 +27,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "app/api/auth/[...nextauth]/route.js"
+    "app/api/auth/[...nextauth]/route.js",
+    "../frontend-admin/app/_components/DreamersDay/DreamersDayList.tsx"
   ],
   "exclude": ["node_modules"]
 }
